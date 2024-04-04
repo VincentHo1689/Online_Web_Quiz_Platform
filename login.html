@@ -10,10 +10,15 @@
 </head>
 <body>
   <p>top bar... login</p>
-  <h1>Login AS</h1>
-  <h1>o STUDENT  |  o TEACHER</h1>
+  
   <p></p>
   <form action="check_login.php">
+    <p>Login AS:</p>
+    <input type="radio" id="student" name="login_role" value="teacher">
+    <label for="student">Student</label><br>
+    <input type="radio" id="teacher" name="login_role" value="student">
+    <label for="teacher">Teacher</label><br>
+
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" value="Enter your username here"><br><br>
     <label for="pw">Password:</label>
