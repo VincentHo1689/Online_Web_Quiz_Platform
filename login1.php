@@ -8,10 +8,10 @@
 
     echo "Runnung PHP"."<br>";
     $name = $_POST['username'];
-    echo "Assign variable".$name."<br>";
+    echo "Assign variable ".$name."<br>";
 
     $sql = "INSERT INTO `test` VALUES ('".$name."')";
-    $conn->query($conn, $sql);
+    mysqli_query($conn, $sql);
 
     echo "Running sql"."<br>";
 
