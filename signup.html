@@ -9,18 +9,25 @@
   <link rel="icon" href="">
 </head>
 <body>
-  <p>top bar... login</p>
-  <h1>Sign up here</h1>
-  <h2>[THIS SHOULD BE A FORM]</h2>
-  <h1>You are student | teacher</h1>
-  <h2>email</h2>
-  <h2>user name</h2>
-  <h2>password</h2>
-  <h2>confirm password</h2>
+  <form action="signup.php" method="post">
+    <input type="radio" id="student" name="login_role" value="teacher">
+    <label for="student">Student </label>
+    <input type="radio" id="teacher" name="login_role" value="student">
+    <label for="teacher">Teacher </label><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" value=""><br>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" value=""><br>
+    <label for="pw">Password:</label><br>
+    <input type="text" id="pw" name="pw" value=""><br>
+    <label for="pw">Confirm Password:</label><br>
+    <input type="text" id="pw" name="pw" value=""><br><br>
+    <input type="submit" value="Submit">
+  </form> 
   
   <p>
     Be a guest user* by pressing
-    <a id="journey" class="tbhover tbcontent" href="login.html">Here</a>!
+    <a id="journey" class="tbhover tbcontent" href="main_g.html">Here</a>!
   </p>
   <p>*As a guest user, your progress will not be saved!</p>
 </body>
