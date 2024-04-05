@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script src="script.js"></script>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -32,6 +34,17 @@ html,body{
 .topnav a.split {
   float: right;
 }
+.copyright {
+  content: " ";
+  position:absolute;
+  bottom: 0;
+  width: 200vh;
+  height: 80px;
+  background: rgb(171, 201, 253);
+  z-index: -1;
+  max-width: 900px;
+  margin: auto;
+}
 </style>
 </head>            
 
@@ -57,8 +70,7 @@ html,body{
         <a id="journey" class="tbhover tbcontent" href="main.html">here</a>!
         <br><br><br>*As a guest user, your progress will not be saved!</p>
     </p>
-
-<script src="script.js"></script>
-   
+<div class="copyright"><br><p style="margin: auto; text-align: center;">Copyright © 2024, Kahoot! All Rights Reserved.
+</p></div>
 </body>
 </html> 
