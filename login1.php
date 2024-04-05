@@ -31,6 +31,6 @@
 
     echo '<script> alert("Wrong Username!!!") </script>';
 
-    #header("Location: main_g.html");
+    header("Location: main_g.html");
   
   ?>
