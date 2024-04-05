@@ -27,6 +27,9 @@
     }
     } else {
     echo "0 results";
-}
+    }
+
+    $resultArray = $result->fetch_all(MYSQLI_ASSOC);
+    echo $resultArray;
   
   ?>
