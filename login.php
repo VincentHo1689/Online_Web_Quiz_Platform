@@ -10,7 +10,7 @@
 </head>
 <body>
   <?php
-    $conn = mysqli_connect("localhost", "root","","newdatabase");
+    $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
     {
         die("Connect Error:" . mysqli_connect_error());
@@ -27,7 +27,7 @@
 
   <div class="bg-rect">
     <br>
-  <form style="text-align: center;" action="check_login.php">
+  <form style="text-align: center;" method="post" action="login1.php">
     <h3 style="text-align: center;">Login As:</h3>
     <input type="radio" id="student" name="login_role" value="teacher">
     <label for="student">Student </label>
