@@ -9,6 +9,14 @@
   <link rel="icon" href="">
 </head>
 <body>
+  <?php
+    $conn = mysqli_connect("localhost", "root","","newdatabase");
+    if (!$conn)
+    {
+        die("Connect Error:" . mysqli_connect_error());
+    }
+  ?>
+
   <div class="topnav">
     <a href="index.html">AlphaQuiz</a>
     <a href="login.html" class="split">Login</a>
@@ -16,10 +24,11 @@
     <a href="index.html" class="split">Home</a>
   </div> 
   <br>
+
   <div class="bg-rect">
     <br>
-    <h3 style="text-align: center;">Login As:</h3>
   <form style="text-align: center;" action="check_login.php">
+    <h3 style="text-align: center;">Login As:</h3>
     <input type="radio" id="student" name="login_role" value="teacher">
     <label for="student">Student </label>
     <input type="radio" id="teacher" name="login_role" value="student">
@@ -31,7 +40,9 @@
     <input type="text" id="pw" name="pw" value="Enter password here"><br><br>
     <input type="submit" value="Login" >
   </form> 
-  <br></div><br>
+  <br></div>
+  
+  <br>
   <p style="text-align: center;">    You don't have a account? Sign up
     <a id="journey" class="tbhover tbcontent" href="signup.html">here</a>!
     <br> <br>Be a guest user* by pressing
