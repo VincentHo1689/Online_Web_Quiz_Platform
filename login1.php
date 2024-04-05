@@ -15,8 +15,7 @@
 
     echo "Running sql"."<br>";
 
-    $result = $conn->query($sql);
-
+    $result = mysqli_query($conn, $sql);
     echo $result;
   
   ?>
