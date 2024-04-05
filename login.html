@@ -9,31 +9,36 @@
   <link rel="icon" href="">
 </head>
 <body>
-  <p>top bar... login</p>
-  
-  <p></p>
-  <form action="check_login.php">
-    <p>Login AS:</p>
+  <div class="topnav">
+    <a href="homepage.html">AlphaQuiz</a>
+    <a href="login.html" class="split">Login</a>
+    <a href="aboutus.html" class="split">About Us</a>
+    <a href="homepage.html" class="split">Home</a>
+  </div> 
+  <br>
+  <div class="bg-rect">
+    <br>
+    <h3 style="text-align: center;">Login As:</h3>
+  <form style="text-align: center;" action="check_login.php">
     <input type="radio" id="student" name="login_role" value="teacher">
     <label for="student">Student </label>
     <input type="radio" id="teacher" name="login_role" value="student">
     <label for="teacher">Teacher </label><br>
     <br>
-    <label for="username">Username:</label>
+    <label for="username">Username:</label> 
     <input type="text" id="username" name="username" value="Enter your username here"><br><br>
     <label for="pw">Password:</label>
     <input type="text" id="pw" name="pw" value="Enter password here"><br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Login" >
   </form> 
-
-  <p>
-    You dont have a account? Sign up
+  <br></div><br>
+  <p style="text-align: center;">    You don't have a account? Sign up
     <a id="journey" class="tbhover tbcontent" href="signup.html">here</a>!
-  </p>
-  <p>
-    Be a guest user* by pressing
+    <br> <br>Be a guest user* by pressing
     <a id="journey" class="tbhover tbcontent" href="main.html">here</a>!
-  </p>
-  <p>*As a guest user, your progress will not be saved!</p>
+    <br><br><br>*As a guest user, your progress will not be saved!</p>
+</p>
+<div class="copyright"><br><p style="margin: auto; text-align: center;">Copyright © 2024, Kahoot! All Rights Reserved.
+</p></div>
 </body>
 </html>
