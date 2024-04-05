@@ -15,8 +15,6 @@
     {
         die("Connect Error:" . mysqli_connect_error());
     }
-    $sql = "INSERT INTO `xxxx_test1` VALUES ('abcd')";
-    mysqli_query($conn, $sql);
   ?>
 
   <div class="topnav">
@@ -29,8 +27,8 @@
 
   <div class="bg-rect">
     <br>
-    <h3 style="text-align: center;">Login As:</h3>
   <form style="text-align: center;" action="check_login.php">
+    <h3 style="text-align: center;">Login As:</h3>
     <input type="radio" id="student" name="login_role" value="teacher">
     <label for="student">Student </label>
     <input type="radio" id="teacher" name="login_role" value="student">
