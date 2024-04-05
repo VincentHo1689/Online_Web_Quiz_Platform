@@ -29,7 +29,8 @@
     echo "0 results";
     }
 
-    $resultArray = $result->fetch_all(MYSQLI_ASSOC);
-    echo $resultArray;
+    echo '<script> alert("Wrong Username!!!") </script>';
+
+    #header("Location: main_g.html");
   
   ?>
