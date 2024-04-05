@@ -13,8 +13,9 @@
     $sql = "INSERT INTO `test` VALUES ('".$name."')";
     mysqli_query($conn, $sql);
 
-    echo "Running sql"."<br>";
+    echo "Running sql INSERT"."<br>";
 
+    $sql = "SELECT test FROM test";
     $result = mysqli_query($conn, $sql);
     echo $result;
   
