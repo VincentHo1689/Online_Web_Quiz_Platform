@@ -17,6 +17,16 @@
 
     $sql = "SELECT test FROM test";
     $result = mysqli_query($conn, $sql);
-    echo $result;
+
+    echo "Running sql SELECT"."<br>";
+
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "test: " . $row["test"] . "<br>";
+    }
+    } else {
+    echo "0 results";
+}
   
   ?>
