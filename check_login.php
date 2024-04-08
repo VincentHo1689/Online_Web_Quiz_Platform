@@ -20,9 +20,11 @@
         # no input radio 
         echo "no input!";}
     else if($role='s'){ 
+        echo "1";
         $sql = "SELECT PW FROM Students WHERE username = ".$name;
+        echo "2";
         $result = mysqli_query($conn, $sql);
-
+        echo "3";
         if (!$conn)
         {
             die("Connect Error:" . mysqli_connect_error());
