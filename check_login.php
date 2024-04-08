@@ -8,6 +8,9 @@
     $role = $_POST['login_role'];
     $name = $_POST['username'];
     $pw = $_POST['pw'];
-  
+    
+    if ($role = ""){
+        echo "no input!";}
+
     echo $role."<br>".$name."<br>".$pw
   ?>
