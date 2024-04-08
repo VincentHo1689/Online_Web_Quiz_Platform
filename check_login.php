@@ -35,7 +35,4 @@
         }
     }
     else {}
-
-    echo empty($role)."<br>";
-    echo $role."<br>".$name."<br>".$pw
   ?>
