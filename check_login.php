@@ -35,7 +35,6 @@
         else {
             # username exists
             $row = $result->fetch_assoc();
-            echo "row = ".$row["PW"];
             $pw1 = $row["PW"];
             if ($pw = $pw1){
                 #correct password
