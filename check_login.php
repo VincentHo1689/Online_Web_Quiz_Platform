@@ -9,8 +9,9 @@
     $name = $_POST['username'];
     $pw = $_POST['pw'];
     
-    if ($role = ""){
+    if (empty($role)){
         echo "no input!";}
-    echo empty($role);
+
+    echo empty($role)."<br>";
     echo $role."<br>".$name."<br>".$pw
   ?>
