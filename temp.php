@@ -29,7 +29,9 @@
     echo "0 results";
     }
 
-    echo '<script> alert("Wrong Username!!!") </script>';
+    echo "<script> 
+    alert('Wrong Username!!!') 
+    windows.location.href='login.html'</script>";
 
     header("Location: main_g.html");
   
