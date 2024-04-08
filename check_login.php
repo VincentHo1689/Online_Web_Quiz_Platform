@@ -11,6 +11,6 @@
     
     if ($role = ""){
         echo "no input!";}
-
+    echo empty($role);
     echo $role."<br>".$name."<br>".$pw
   ?>
