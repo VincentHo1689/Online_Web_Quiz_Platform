@@ -36,3 +36,11 @@
     header("Location: main_g.html");
   
   ?>
+
+
+
+alert('Hi Students! \\n
+Account successfully created! \\n
+Username = $name \\n
+Email = $email \\n
+Password = $pw ')

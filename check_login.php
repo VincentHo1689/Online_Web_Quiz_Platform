@@ -9,16 +9,9 @@
     $name = $_POST['username'];
     $pw = $_POST['pw'];
     
-    echo "Test Input: ";
-    echo "<br> Role: ".$role;
-    echo "<br> Name: ".$name;
-    echo "<br> PW: ".$pw;
-    echo "<br><br> Result: ";
-    
-
     if (empty($role)){
         # no input radio 
-        echo "<script> alert('Choose your role!!!') 
+        echo "<script> alert('Role not chosen!!!') 
         document.location='login.html'</script>";}
     else if($role=='s'){ 
         $sql = "SELECT PW FROM Students WHERE Username = '$name'";
