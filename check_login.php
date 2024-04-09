@@ -38,13 +38,13 @@
             if ($pw == $pw1){
                 #correct password
                 if ($role == 'Student')
-                    {echo "<script> 
-                    document.cookie='username=$name'
+                {echo "<script> 
+                    document.cookie='username=$name; path=/'
                     alert('Welcome $role ".$name.".') 
                     document.location='main_s.html'</script>";}
                 else 
                     {echo "<script> 
-                    document.cookie='username=$name'
+                    document.cookie='username=$name; path=/'
                     alert('Welcome $role ".$name.".') 
                     document.location='main_t.html'</script>";}
             }
