@@ -15,7 +15,11 @@
     <a href="aboutus.html" class="split">About Us</a>
     <a href="main_s.html" class="split">Home</a>
   </div> 
-  <h1>Welcome [students]!</h1>
+  <h1 id="username">Welcome [students]!</h1>
+  <script>
+    document.getElementById("username").innerHTML = "Welcome"+Getcookie(username);
+  </script>
+  
   <h2>Menu</h2>
   <h2>Do public quizzes</h2>
   <h2>Join classes</h2>
