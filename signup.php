@@ -6,13 +6,17 @@
         die("Connect Error:" . mysqli_connect_error());
     }
 
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
     $role = $_POST['login_role'];
     $name = $_POST['username'];
     $email = $_POST['email'];
     $pw = $_POST['pw'];
     $cpw = $_POST['cpw'];
 
-    $sql = "SELECT MAX(StudentID) AS new_id FROM Students";
+    $sql = "SELECT MAX(StudentID) AS new_id FROM $role";
     $result = mysqli_query($conn, $sql);
     
     $row = $result->fetch_assoc();
@@ -40,4 +44,4 @@
         mysqli_query($conn, $sql);
         echo "<script> document.location='login.html' </script>";
     }
-  ?>
+?>
