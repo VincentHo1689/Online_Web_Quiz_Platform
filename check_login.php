@@ -9,6 +9,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
+
     $role = $_POST['login_role'];
     $name = $_POST['username'];
     $pw = $_POST['pw'];
@@ -36,8 +37,16 @@
             $pw1 = $row["PW"];
             if ($pw == $pw1){
                 #correct password
-                echo "<script> alert('Welcome $role ".$name.".') 
-                document.location='main_s.html'</script>";
+                if ($role == 'Student')
+                    {echo "<script> 
+                    document.cookie='username=$name'
+                    alert('Welcome $role ".$name.".') 
+                    document.location='main_s.html'</script>";}
+                else 
+                    {echo "<script> 
+                    document.cookie='username=$name'
+                    alert('Welcome $role ".$name.".') 
+                    document.location='main_t.html'</script>";}
             }
             else {
                 #wrong password
