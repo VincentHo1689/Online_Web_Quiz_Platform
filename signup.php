@@ -32,6 +32,11 @@
         echo "<script> alert('Password not identical!') 
         document.location='signup.html'</script>";}
 
+    if (!(str_contains($email, '@'))) {
+        echo "<script> alert('Email is not valid!') 
+        document.location='signup.html'</script>";
+    }
+
     if (empty($name) || empty($email) || empty($pw) || empty($cpw)){
         echo "<script> alert('Some field are not entered!') 
         document.location='signup.html'</script>";
