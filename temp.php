@@ -1,4 +1,6 @@
 <?php
+
+    #connect PHP
     echo "Connecting PHP"."<br>";
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
@@ -6,22 +8,19 @@
         die("Connect Error:" . mysqli_connect_error());
     }
 
-    echo "Runnung PHP"."<br>";
+    # assign variable
     $name = $_POST['username'];
-    echo "Assign variable ".$name."<br>";
 
+    # run sql - no query
     $sql = "INSERT INTO `test` VALUES ('".$name."')";
     mysqli_query($conn, $sql);
 
-    echo "Running sql INSERT"."<br>";
-
+    # run sql - query
     $sql = "SELECT test FROM test";
     $result = mysqli_query($conn, $sql);
-
-    echo "Running sql SELECT"."<br>";
-
+    
+    # print query
     if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "test: " . $row["test"] . "<br>";
     }
@@ -29,18 +28,27 @@
     echo "0 results";
     }
 
+    # redirect 1
     echo "<script> 
     alert('Wrong Username!!!') 
     windows.location.href='login.html'</script>";
 
+    # redirect 2
     header("Location: main_g.html");
+
+    # check dulplicate name
+    $sql = "SELECT Username FROM $role WHERE Username = '$name'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result->num_rows != 0) {
+        # username wrong/ do not exist
+        echo "<script> alert('Username taken, please choose another username.') 
+        document.location='login.html'</script>";}
+
+    # append new ID
+    $sql = "SELECT MAX(ClassID) AS new_id FROM ClassName";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_assoc();
+    $new_id = (int) $row["new_id"] +1;
   
   ?>
-
-
-
-alert('Hi Students! \\n
-Account successfully created! \\n
-Username = $name \\n
-Email = $email \\n
-Password = $pw ')

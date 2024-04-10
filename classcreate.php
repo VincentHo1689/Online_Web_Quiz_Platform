@@ -17,31 +17,26 @@
     $row = $result->fetch_assoc();
     $new_id = (int) $row["new_id"] +1;
 
-    if (empty($class)){
-        # no input radio 
-        echo "<script> alert('Empty name.') 
+    # check dulplicate name
+    $sql = "SELECT name FROM ClassName WHERE name = '$class'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result->num_rows != 0) {
+        # username wrong/ do not exist
+        echo "<script> alert('Class Name taken, please choose another class name.') 
         document.location='classcreate.html'</script>";}
 
-    if ($pw != $cpw){
-        # wrong password
-        echo "<script> alert('Password not identical!') 
-        document.location='signup.html'</script>";}
-
-    if (!(str_contains($email, '@'))) {
-        echo "<script> alert('Email is not valid!') 
-        document.location='signup.html'</script>";
-    }
-
-    if (empty($name) || empty($email) || empty($pw) || empty($cpw)){
-        echo "<script> alert('Some field are not entered!') 
-        document.location='signup.html'</script>";
-    }
+    # check empty  
+    if (empty($class)){
+        # empty name
+        echo "<script> alert('Empty class name.') 
+        document.location='classcreate.html'</script>";}
     else{
         echo "<script> 
-        alert('$role account successfully created! \\n Username = $name \\n Email = $email \\n Password = $pw ')
+        alert('Class $class successfully created!')
         </script>";
-        $sql = "INSERT INTO $role VALUES ('$new_id','$name','$pw','$email')";
+        $sql = "INSERT INTO ClassName VALUES ('$new_id','$class')";
         mysqli_query($conn, $sql);
-        echo "<script> document.location='login.html' </script>";
+        echo "<script> document.location='main_t.html' </script>";
     }
 ?>
