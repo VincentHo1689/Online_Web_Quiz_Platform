@@ -1,7 +1,7 @@
-function getCookie2(cname) {
+function getCookie(cname) {
   const allCookies = document.cookie;
   const cookieArray = allCookies.split(';');
-  let username = "";
+  let out_name = "";
   for (const cookie of cookieArray) {
       const [name, value] = cookie.trim().split('=');
       if (name === cname) {

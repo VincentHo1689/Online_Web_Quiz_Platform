@@ -8,7 +8,7 @@
   <title>Welcome to AlphaQuiz!</title>
   <link rel="icon" href="">
 </head>
-<body>
+<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');">
   <div class="topnav">
     <a href="index.html">AlphaQuiz</a>
     <a href="login.html" class="split">Logout</a>
@@ -16,19 +16,6 @@
     <a href="main_s.html" class="split">Home</a>
   </div> 
   <h1 id="name">Unchanged!</h1>
-  <script>
-    const allCookies = document.cookie;
-    const cookieArray = allCookies.split(';');
-    let username = "";
-    for (const cookie of cookieArray) {
-        const [name, value] = cookie.trim().split('=');
-        if (name === "username") {
-            username = value;
-            break;
-        }
-    }
-    document.getElementById("name").innerHTML="Welcome "+username+" !";
-  </script>
   
   <h2>Menu</h2>
   <h2>Do public quizzes</h2>

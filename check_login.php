@@ -40,6 +40,7 @@
                 if ($role == 'Student')
                 {echo "<script> 
                     document.cookie='username=$name; path=/'
+                    console.log(document.cookie)
                     alert('Welcome $role ".$name.".') 
                     document.location='main_s.html'</script>";}
                 else 
