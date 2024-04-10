@@ -10,22 +10,17 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $role = $_POST['login_role'];
-    $name = $_POST['username'];
-    $email = $_POST['email'];
-    $pw = $_POST['pw'];
-    $cpw = $_POST['cpw'];
+    $class = $_POST['class'];
 
-    $sql = "SELECT MAX(StudentID) AS new_id FROM $role";
+    $sql = "SELECT MAX(ClassID) AS new_id FROM ClassName";
     $result = mysqli_query($conn, $sql);
-    
     $row = $result->fetch_assoc();
     $new_id = (int) $row["new_id"] +1;
 
-    if (empty($role)){
+    if (empty($class)){
         # no input radio 
-        echo "<script> alert('Role not chosen.') 
-        document.location='signup.html'</script>";}
+        echo "<script> alert('Empty name.') 
+        document.location='classcreate.html'</script>";}
 
     if ($pw != $cpw){
         # wrong password
