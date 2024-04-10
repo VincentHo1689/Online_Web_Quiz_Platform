@@ -28,6 +28,24 @@
     echo "0 results";
     }
 
+    # print query in table
+    ?>
+        <table>
+        <tr>
+            <td>Teacher Name</td>
+        </tr>
+        <?php 
+        while($row = mysqli_fetch_assoc($result))
+        {
+        ?>
+            <tr>
+                <td><?=$row['TeacherName']?><td>
+            <tr>
+        <?php
+        }
+        ?>  
+        </table>
+    <?php
     # redirect 1
     echo "<script> 
     alert('Wrong Username!!!') 

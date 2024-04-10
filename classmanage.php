@@ -10,7 +10,35 @@
 </head>
 <body>
 
-<h1>Choose Class</h1>
+<h1>Existing Class</h1>
+
+
+
+
+<table>
+  <Tr>
+    <th>Class ID</th>
+    <th>Class Name</th>
+  </tr>
+  <?php 
+
+  $ID
+
+  $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID";
+  $result = mysqli_query($conn, $sql);
+  while($row = mysqli_fetch_assoc($result))
+  {
+  ?>
+      <Tr>
+        <td><?=$row['ClassID']?><td>
+        <td><?=$row['name']?><td>
+      <tr>
+  <?php
+  }
+  ?>  
+</table>
+
+
   <table>
     <tr>
       <th>Class ID</th>
