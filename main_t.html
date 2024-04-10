@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-  <title>Welcome to AlphaQuiz!</title>
+  <title>Main Page</title>
   <link rel="icon" href="">
 </head>
 <body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');">
@@ -17,17 +17,20 @@
   </div> 
   <h1 id='name'>Welcome [teachers]!</h1>
 
+ <div>
   <h1>Classes</h1>
-  <h2>Create classes</h2>
-  <h2>Manage classes</h2>
-
+  <a href = "classcreate.html">Create classes</a>
+  <a href = "classmanage.html">Manage classes</a>
+ </div>
+<div>
   <h1>Quizzes</h1>
-  <h2>Create Quiz</h2>
-  <h2>Modify Quiz</h2>
-
+  <a href = "quizcreate.html">Create Quiz</a>
+  <a href = "quizmodify.html">Modify Quiz</a>
+</div>
+<div>
   <h1>Stats</h1>
-  <h2>Stats by students</h2>
-  <h2>Stats by quizzes</h2>
-
+  <a href = "statstudent.html">Stats by students</a>
+  <a href = "statquiz.html">Stats by quizzes</a>
+</div>
 </body>
 </html>
