@@ -9,26 +9,13 @@
   <link rel="icon" href="">
 </head>
 <body>
-  <form action="signup.php" method="post">
-    <input type="radio" id="student" name="login_role" value="Student">
-    <label for="student">Student </label>
-    <input type="radio" id="teacher" name="login_role" value="Teacher">
-    <label for="teacher">Teacher </label><br>
-    <label for="email">Email:</label><br>
-    <input type="text" id="email" name="email" value=""><br>
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" value=""><br>
-    <label for="pw">Password:</label><br>
-    <input type="text" id="pw" name="pw" value=""><br>
-    <label for="pw">Confirm Password:</label><br>
-    <input type="text" id="cpw" name="cpw" value=""><br><br>
+
+  <form action="create_class.php" method="post">
+    <label for="username">Class Name:</label><br>
+    <input type="text" id="class" name="class" value=""><br>
     <input type="submit" value="Submit">
   </form> 
-  
-  <p>
-    Be a guest user* by pressing
-    <a id="journey" class="tbhover tbcontent" href="main_g.html">Here</a>!
-  </p>
-  <p>*As a guest user, your progress will not be saved!</p>
+
+  <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
 </html>
