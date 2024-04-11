@@ -11,11 +11,7 @@
     error_reporting(E_ALL);
 
     $ID = $_POST['ID'];
-    $name = $_POST['newname'];
-
-    echo $ID;
-    echo $name;
-    
+    $name = $_POST['newname'];   
 
     if (empty($name) || empty($ID)){
         # empty field
