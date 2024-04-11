@@ -14,7 +14,7 @@
     $cid = $_POST['cid'];
     $teacher = $_COOKIE['ID'];
 
-    if (empty($qname) || empty($qnum)){
+    if (empty($qname) || empty($cid)){
         # empty field
         echo "<script> alert('Some field are not entered!') 
         document.location='quizcreate.html'</script>";
@@ -32,7 +32,7 @@
         $row = $result->fetch_assoc();
         $new_id = (int) $row["new_id"] +1;
 
-        $sql = "INSERT INTO Quiz VALUES($new_id,$qname,$cid,$teacher);";	
+        $sql = "INSERT INTO Quiz VALUES($new_id,'$qname',$cid,$teacher);";	
         mysqli_query($conn, $sql);
         echo "<script> document.location='quizquestioncreate.php' </script>";
     }
