@@ -27,7 +27,7 @@
         echo "<script> 
         alert('Class Name Updated.')
         </script>";
-        $sql = "UPDATE ClassName SET Name = $name WHERE ClassID = $ID;";
+        $sql = "UPDATE ClassName SET Name = '$name' WHERE ClassID = $ID;";
         mysqli_query($conn, $sql);
         echo "<script> document.location='classmanage.php' </script>";
     }
