@@ -14,6 +14,15 @@
     $cid = $_POST['cid'];
     $teacher = $_COOKIE['ID'];
 
+    
+    $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher'";
+    $result = mysqli_query($conn, $sql); 
+    $row = $result->fetch_assoc();
+    if ($result->num_rows == 0) {
+        # username wrong/ do not exist
+        echo "<script> alert('ClassID not available.') 
+        document.location='login.html'</script>";}
+
     if (empty($qname) || empty($cid)){
         # empty field
         echo "<script> alert('Some field are not entered!') 
@@ -34,6 +43,6 @@
 
         $sql = "INSERT INTO Quiz VALUES($new_id,'$qname',$cid,$teacher);";	
         mysqli_query($conn, $sql);
-        echo "<script> document.location='quizquestioncreate.php' </script>";
+        echo "<script> document.location='quizquestioncreate.html' </script>";
     }
 ?>
