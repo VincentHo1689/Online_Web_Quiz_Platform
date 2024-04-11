@@ -22,6 +22,10 @@
   </tr>
   <?php 
 
+  ini_set('display_errors', '1');
+  ini_set('display_startup_errors', '1');
+  error_reporting(E_ALL);
+
   $ID = $_COOKIE["ID"];
 
 
@@ -29,7 +33,12 @@
   $result = mysqli_query($conn, $sql);
   while($row = mysqli_fetch_assoc($result))
   {
-  echo "<Tr><td>$row['ClassID']<td><td>$row['name']<td><tr>"   
+  $classID=$row['ClassID'];
+  $className=$row['name'];
+  echo "<Tr>
+          <td>$classID<td>
+          <td>$className<td>
+        <tr>";
   }
   ?>  
 </table>
