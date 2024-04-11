@@ -22,7 +22,6 @@
   </tr>
   <?php 
 
-  $ID
 
   $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID";
   $result = mysqli_query($conn, $sql);
