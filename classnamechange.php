@@ -13,6 +13,8 @@
     $ID = $_POST['ID'];
     $name = $_POST['newname'];
 
+    echo $ID;
+    echo $name;
     
 
     if (empty($name) || empty($ID)){
