@@ -22,9 +22,10 @@
   </tr>
   <?php 
 
-  $ID
+  $ID = $_COOKIE["ID"];
 
-  $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID";
+
+  $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID AND ClassID != 0";
   $result = mysqli_query($conn, $sql);
   while($row = mysqli_fetch_assoc($result))
   {
