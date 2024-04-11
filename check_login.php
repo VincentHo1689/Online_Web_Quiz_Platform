@@ -36,16 +36,21 @@
             $row = $result->fetch_assoc();
             $pw1 = $row["PW"];
             if ($pw == $pw1){
+                $sql = "SELECT ID FROM $role WHERE Username = '$name'";
+                $result = mysqli_query($conn, $sql); 
+                $row = $result->fetch_assoc();
+                $ID = $row["ID"];
                 #correct password
                 if ($role == 'Student')
                 {echo "<script> 
                     document.cookie='username=$name; path=/'
-                    console.log(document.cookie)
+                    document.cookie='ID=$ID; path=/'
                     alert('Welcome $role ".$name.".') 
                     document.location='main_s.html'</script>";}
                 else 
                     {echo "<script> 
                     document.cookie='username=$name; path=/'
+                    document.cookie='ID=$ID; path=/'
                     alert('Welcome $role ".$name.".') 
                     document.location='main_t.html'</script>";}
             }

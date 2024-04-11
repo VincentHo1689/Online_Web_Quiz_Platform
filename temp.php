@@ -68,5 +68,11 @@
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_assoc();
     $new_id = (int) $row["new_id"] +1;
+
+    # get 1 row
+    $sql = "SELECT PW FROM $role WHERE Username = '$name'";
+    $result = mysqli_query($conn, $sql); 
+    $row = $result->fetch_assoc();
+    $pw1 = $row["PW"];
   
   ?>
