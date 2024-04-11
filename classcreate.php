@@ -32,10 +32,12 @@
         echo "<script> alert('Empty class name.') 
         document.location='classcreate.html'</script>";}
     else{
+        # correct input
         echo "<script> 
         alert('Class $class successfully created!')
         </script>";
-        $sql = "INSERT INTO ClassName VALUES ('$new_id','$class')";
+        $ID = $_COOKIE['ID'];
+        $sql = "INSERT INTO ClassName VALUES ('$new_id','$ID','$class')";
         mysqli_query($conn, $sql);
         echo "<script> document.location='main_t.html' </script>";
     }
