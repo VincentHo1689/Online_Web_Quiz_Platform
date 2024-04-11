@@ -28,28 +28,20 @@
 
   $ID = $_COOKIE["ID"];
 
-
-  $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID AND ClassID != 0";
+  $conn = mysqli_connect("localhost", "root","","COMP3421");
+  $sql = "SELECT ClassID, name FROM ClassName WHERE TeacherID = $ID AND ClassID <> 0";
   $result = mysqli_query($conn, $sql);
   while($row = mysqli_fetch_assoc($result))
   {
   $classID=$row['ClassID'];
   $className=$row['name'];
   echo "<Tr>
-          <td>$classID<td>
-          <td>$className<td>
+          <td>$classID</td>
+          <td>$className</td>
         <tr>";
   }
   ?>  
 </table>
-
-
-  <table>
-    <tr>
-      <th>Class ID</th>
-      <th>Class Name</th>
-    </tr>
-  </table>
 
   <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
