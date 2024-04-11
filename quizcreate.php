@@ -32,7 +32,6 @@
         # successful enter
         echo "<script> 
         alert('Quiz Name Updated.')
-        document.cookie='quizID=$; path=/'
         </script>";
         
         # new ID
@@ -43,6 +42,7 @@
 
         $sql = "INSERT INTO Quiz VALUES($new_id,'$qname',$cid,$teacher);";	
         mysqli_query($conn, $sql);
-        echo "<script> document.location='quizquestioncreate.html' </script>";
+        echo "<script> document.cookie='quizID=$new_id; path=/'
+        document.location='quizquestioncreate.html' </script>";
     }
 ?>
