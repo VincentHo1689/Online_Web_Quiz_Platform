@@ -29,12 +29,7 @@
   $result = mysqli_query($conn, $sql);
   while($row = mysqli_fetch_assoc($result))
   {
-  ?>
-      <Tr>
-        <td><?=$row['ClassID']?><td>
-        <td><?=$row['name']?><td>
-      <tr>
-  <?php
+  echo "<Tr><td>$row['ClassID']<td><td>$row['name']<td><tr>"   
   }
   ?>  
 </table>
