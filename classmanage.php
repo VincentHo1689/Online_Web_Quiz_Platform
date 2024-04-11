@@ -44,7 +44,7 @@
 </table>
 
 <br>
-<p> Change Class Name </p>
+<h1> Change Class Name </h1>
 <form action="classnamechange.php" method="post">
     <label for="ID">Class ID of the class to change:</label><br>
     <input type="text" id="ID" name="ID" value=""><br>
