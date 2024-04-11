@@ -48,6 +48,7 @@
     <input type="text" id="ID" name="ID" value=""><br>
     <label for="pw">New Class Name:</label><br>
     <input type="text" id="newname" name="newname" value=""><br>
+    <input type="submit" value="Submit">
 </form>
   <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
