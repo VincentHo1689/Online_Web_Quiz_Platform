@@ -124,8 +124,8 @@
   .Classesmain{
     content: " ";
     bottom: auto;
-    width: 70vh;
-    height: 19vh;
+    width: 65vh;
+    height: 14vh;
     background: rgb(253, 183, 183);
     z-index: -1;
     margin: left;
@@ -134,14 +134,14 @@
   .Classes{
     height: 6vh;
     width: 30vh;
-    background-color: rgb(237, 81, 81);
+    background-color: rgb(250, 101, 101);
     border: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 10px center;
     color: rgb(255, 255, 255);
-    padding: 11px;
+    padding: 1vh;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -149,13 +149,13 @@
   }
 
   .Classes:hover{
-    background-color: rgb(141, 29, 29);
+    background-color: rgb(187, 21, 21);
   }
   .Quizzesmain{
     content: " ";
     bottom: auto;
-    width: 70vh;
-    height: 19vh;
+    width: 65vh;
+    height: 14vh;
     background: rgb(210, 174, 244);
     z-index: -1;
     margin: left;
@@ -164,14 +164,14 @@
   .Quizzes{
     height: 6vh;
     width: 30vh;
-    background-color: rgb(172, 91, 247);
+    background-color: rgb(177, 104, 245);
     border: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 10px center;
     color: rgb(255, 255, 255);
-    padding: 11px;
+    padding: 1vh;
     border-radius: 16px;
     text-align: center; 
     display: flex;
@@ -186,8 +186,8 @@
   .statmain{
     content: " ";
     bottom: auto;
-    width: 70vh;
-    height: 19vh;
+    width: 65vh;
+    height: 14vh;
     background: rgb(174, 227, 234);
     z-index: -1;
     margin: left;
@@ -196,7 +196,7 @@
   .stat{
     height: 6vh;
     width: 30vh;
-    background-color: rgb(98, 219, 235);
+    background-color: rgb(103, 214, 229);
     border: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
@@ -204,7 +204,7 @@
     background-position: right 10px center;
     color: rgb(255, 255, 255);
     text-align: left; 
-    padding: 11px;
+    padding: 1vh;
     border-radius: 16px;
     text-align: center; 
     display: flex;
@@ -256,6 +256,10 @@
     transform: translate(-50%, -50%);
     }
 
+    .rect-arrowhome:hover{
+      background-color: rgb(46, 58, 197);
+    }
+
     .bg-rectquizcreate {
       content: " ";
       position: relative;
@@ -264,7 +268,11 @@
       z-index: -1;
       top: 50%; 
       left: 50%; 
-      width: 60%; 
-      height: 70%;
+      width: 40%; 
+      height: 65%;
       transform: translate(-50%,-50%);
+    }
+
+    h3{
+      font-size: 3vh;
     }
