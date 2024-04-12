@@ -12,8 +12,8 @@
 
   <table>
     <Tr>
-      <th>Quiz ID</th>
       <th>Quiz Name</th>
+      <th>Class Name</th>
     </tr>
     <?php 
   
@@ -24,23 +24,25 @@
     $ID = $_COOKIE["ID"];
   
     $conn = mysqli_connect("localhost", "root","","COMP3421");
-    $sql = "SELECT QuizID, name FROM Quiz WHERE ClassID = 0 OR ClassID = ANY(SELECT ClassID FROM Class Where StudentID = '$ID')";
+    $sql = "SELECT Q.name AS Q, C.name AS C FROM Quiz AS Q, ClassName AS C WHERE C.ClassID = Q.ClassID AND (Q.ClassID = 0 OR Q.ClassID = ANY(SELECT ClassID FROM Class Where StudentID = '$ID')) ORDER BY Q.ClassID";
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_assoc($result))
     {
-    $QID=$row['QuizID'];
-    $quizname=$row['name'];
-    echo "<Tr>
-            <td>$QID</td>
-            <script>
-            (function() {
-              var scrt_var = '$quizname';
-              var strLink = '2.html&Key=' + scrt_var;
-              document.getElementById('link').setAttribute('href',strLink);
-          })();
-            </script>
-            <td><a  id='link'>$quizname</a></td>
-          <tr>";
+    $Qname=$row['Q'];
+    $Cname=$row['C'];
+    ?>
+    <Tr>
+        <td><?= $Qname ?></td>
+        <td><?= $Cname ?></td>
+
+        <form action="StartQuiz.php" method="post">
+          <td><input type="submit" value="Do Quiz"></td>
+          <input type="hidden" name='QuizName' value='<?= $Qname ?>'>
+        </form>
+    </tr>
+      
+
+    <?php
     }
     ?>  
   </table>
