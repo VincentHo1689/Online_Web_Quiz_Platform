@@ -1,23 +1,23 @@
 Student
-ID,username,PW,email
+ID (Int 4), username (Str 50), PW (Str 50), email (Str 50)
 
 Teacher
-ID,username,PW,email
+ID (Int 4), username (Str 50), PW (Str 50), email (Str 50)
 
 ClassName
-ClassID,name
+ClassID (Int 4), TeacherID (Int 4), name (Str 50)
 
 Class
-ClassID,StudentID
+ClassID (Int 4), StudentID (Int 4)
 
 Quiz
-QuizID,name,ClassID,TeacherID
+QuizID (Int 4), name (Str 50), ClassID (Int 4), TeacherID (Int 4)
 
 Question
-QuestionID,QuizID,content
+QuestionID (Int 6), QuizID (Int 4), Content (Str 500)
 
 Answer
-QuestionID,Num,content,answer
+QuestionID (Int 6), AnswerNum (Int 1), Content (Str 500), answer (Bool)
 
 Stat
-QuizID,QuestionID,
+QuestionID (Int 6), StudentID (Int 4), Correct (Bool)
