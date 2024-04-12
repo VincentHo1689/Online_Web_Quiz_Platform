@@ -3,7 +3,7 @@
     height: 100%;
     padding: 0;
     margin: auto;
-    animation: fadeInAnimation ease 0.5s;
+    animation: fadeInAnimation ease 0.3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
