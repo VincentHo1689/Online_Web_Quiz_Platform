@@ -9,13 +9,17 @@
   <link rel="icon" href="">
 </head>
 <body>
-
-  <form action="classcreate.php" method="post">
+  <div class="bg-rectclasscreate" style="padding-left: 5%;"> <br>
+  <h3>Create Your Classroom</h3>
+  <form action="classcreate.php" method="post" >
     <label for="username">Class Name:</label><br>
     <input type="text" id="class" name="class" value=""><br>
+    <br>
     <input type="submit" value="Submit">
-  </form> 
-
-  <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
+  </form> <br><br>
+  <div style=" margin: 0; position: absolute; top: 70%; left: 50%; display: flex; justify-content: center; align-items: center;">
+  <button class="rect-arrowhome" onclick="window.location.href='main_t.html'"> <h4>Back to main page</h4></button>
+</div>
+  </div>
 </body>
 </html>
