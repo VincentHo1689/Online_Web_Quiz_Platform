@@ -10,20 +10,33 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $ID = $_POST['ID'];   
+    $ID = $_POST['ID'];  
+    $SID = $_COOKIE["ID"];
+    
+    $sql = "SELECT * FROM Class WHERE ClassID='$ID' AND StudentID= '$SID'";
+    $result = mysqli_query($conn, $sql);
 
-    if (empty($name) || empty($ID)){
+    if ($result->num_rows != 0) {
+        # username wrong/ do not exist
+        echo "<script> alert('You already joined this class.') 
+        document.location='main_s.html'</script>";}
+
+    if (empty($ID)){
         # empty field
         echo "<script> alert('Some field are not entered!') 
-        document.location='classmanage.php'</script>";
+        document.location='classjoin.php'</script>";
     }
     else{
         # successful enter
+        $sql = "SELECT name FROM ClassName WHERE ClassID = '$ID' AND ClassID <> 0";
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_assoc();
+        $name = $row['name'];
         echo "<script> 
-        alert('Class Name Updated.')
+        alert('Joined Class ' + '$name' +'.');
         </script>";
-        $sql = "UPDATE ClassName SET Name = '$name' WHERE ClassID = $ID;";
+        $sql = "INSERT INTO Class(ClassID, StudentID) VALUES('$ID','$SID')";
         mysqli_query($conn, $sql);
-        echo "<script> document.location='classmanage.php' </script>";
+        echo "<script> document.location='main_s.html' </script>";
     }
 ?>

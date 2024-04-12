@@ -21,8 +21,6 @@
         ini_set('display_startup_errors', '1');
         error_reporting(E_ALL);
       
-        $ID = $_COOKIE["ID"];
-      
         $conn = mysqli_connect("localhost", "root","","COMP3421");
         $sql = "SELECT ClassID, name FROM ClassName WHERE ClassID <> 0";
         $result = mysqli_query($conn, $sql);
