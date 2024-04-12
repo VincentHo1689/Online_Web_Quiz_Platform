@@ -23,6 +23,7 @@
       $row = $result->fetch_assoc();
       $QuizID = $row['QuizID'];
       echo "<script>  document.cookie = 'QuizID = $QuizID; path=/'; </script>";
+      echo "<script>  document.cookie = 'QNum = 1; path=/'; </script>";
 
       $sql = "SELECT COUNT(*) AS cnt FROM Question WHERE QuizID = '$QuizID'";
       $result = mysqli_query($conn, $sql);
@@ -32,8 +33,8 @@
 
 
   <h1><?= "There are total ".$QuizNum." questions."?></h1>
-
-  <form action="StartQuiz.php" method="post">
+  
+  <form action="Quiz.php" method="post">
     <td><input type="submit" value="Start Quiz"></td>
     <input type="hidden" name='QuizID' value='<?= $QuizID ?>'>
   </form>
