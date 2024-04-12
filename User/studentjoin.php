@@ -10,8 +10,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $ID = $_POST['ID'];
-    $name = $_POST['newname'];   
+    $ID = $_POST['ID'];   
 
     if (empty($name) || empty($ID)){
         # empty field
