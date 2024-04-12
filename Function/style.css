@@ -19,7 +19,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 2.8vh;
   }
     
   .topnav a:hover {
@@ -50,6 +50,7 @@
     z-index: -1;
     padding: 0;    
     margin: 0;
+    font-size: 2.5vh;
   }
 
   @keyframes fadeInAnimation {
@@ -109,8 +110,6 @@
     background-repeat: no-repeat;
     background-position: right 10px center;
     color: rgb(255, 255, 255);
-    text-align: left; 
-    padding: 11px;
     border-radius: 16px;
     text-align: center; 
     display: flex;
@@ -216,3 +215,56 @@
   .stat:hover{
     background-color: rgb(39, 141, 205);
   }
+
+  .bg-rectsignup {
+    content: " ";
+    bottom: auto;
+    width: 350px;
+    height: 300px;
+    background: rgb(224, 224, 224);
+    z-index: -1;
+    margin: auto;
+  }
+
+  .bg-rectclasscreate {
+    content: " ";
+    position: relative;
+    height: 50%;
+    background: rgb(224, 224, 224);
+    z-index: -1;
+    top: 50%; 
+    left: 50%; 
+    width: 50%; 
+    transform: translate(-50%,-50%);
+  }
+  .rect-arrowhome{
+    height: 8vh;
+    width: 32vh;
+    background-color: rgb(124, 180, 221);
+    border: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: rgb(255, 255, 255);
+    border-radius: 16px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+
+    .bg-rectquizcreate {
+      content: " ";
+      position: relative;
+      height: 50%;
+      background: rgb(224, 224, 224);
+      z-index: -1;
+      top: 50%; 
+      left: 50%; 
+      width: 60%; 
+      height: 70%;
+      transform: translate(-50%,-50%);
+    }

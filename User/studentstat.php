@@ -8,7 +8,7 @@
   <title>Main Page</title>
   <link rel="icon" href="">
 </head>
-<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');" style="background-color: bisque;">
+<body style="background-color: bisque;">
   <div class="topnav">
     <a href="../index.html">AlphaQuiz</a>
     <a href="../login/login.html" class="split">Logout</a>
@@ -33,18 +33,29 @@
         $SID = $_COOKIE["ID"];
 
         $conn = mysqli_connect("localhost", "root","","COMP3421");
-        $sql = "SELECT DISTINCT Quiz.name FROM Quiz,Question,Stat 
-        WHERE Stat.StudentID ='$SID' AND Stat.QuestionID = Question.QuestionID AND Question.QuizID = Quiz.QuizID";
-        
+        $sql = "SELECT DISTINCT Q.name AS name FROM Quiz AS Q,Question AS QU ,Stat AS S 
+        WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID"; 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result))
         {
         $quizName=$row['name'];
-        echo "<tr>
-                <td>$quizName</td>
-                <td>mysqli_query($conn,'COUNT Correct FROM Stat Where Correct = 1' )</td>
-              </tr>";
-        }
+        $sql2 = "SELECT * FROM Quiz AS Q, Question AS QU ,Stat AS S 
+        WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID
+        AND Q.name ='$quizName' AND S.Correct = 1";
+        $result2 = mysqli_query($conn, $sql2);
+        $result2 = mysqli_num_rows($result2);
+        ?> <tr>
+                <td><?php echo $quizName ?></td>
+                <td><?php echo $result2 ?></td> 
+        <?php 
+        $sql3 = "SELECT * FROM Quiz AS Q, Question AS QU ,Stat AS S 
+        WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID
+        AND Q.name ='$quizName'";
+        $result3 = mysqli_query($conn, $sql3);
+        $result3 = mysqli_num_rows($result3); ?>
+                <td><?php echo $result3 ?></td>
+        </tr>;
+        <?php }
         ?>  
       </table>
 </body>
