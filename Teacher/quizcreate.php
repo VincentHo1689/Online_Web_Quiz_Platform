@@ -14,11 +14,11 @@
     $teacher = $_COOKIE['ID'];
 
     
-    $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher'";
+    $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher' AND ClassID = '$cid'";
     $result = mysqli_query($conn, $sql); 
     $row = $result->fetch_assoc();
     if ($result->num_rows == 0) {
-        # username wrong/ do not exist
+        # other's class
         echo "<script> alert('ClassID not available.') 
         document.location='quizcreate.html'</script>";}
 

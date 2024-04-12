@@ -8,29 +8,50 @@
     <title>Welcome to AlphaQuiz!</title>
     <link rel="icon" href="">
 </head>
-<body>
+<body onload="loop_quote()">
     <div class="topnav">
         <a href="index.html">AlphaQuiz</a>
         <a href="login/login.html" class="split">Login</a>
         <a href="other/aboutus.html" class="split">About Us</a>
         <a href="index.html" class="split">Home</a>
       </div>
-      <h1 style="text-align: center;">Welcome to AlphaQuiz!</h1>
-      <h2 style="text-align: center;">The best quiz application ever!</h2>
-      <br><br>
-    <table style="margin: auto;" >
+      
+      <div id="grad2">
+      <br>
+    <table style="margin: auto; table-layout: fixed;" >
         <tr>
-          <th style="width: 50%;"><img src="https://www.polyu.edu.hk/comp/-/media/department/comp/setting/polyu-comp-logo.png?bc=ffffff&h=150&mw=1050&hash=AFFA898AD96EDFD486CD27DFE37E98AF" width="227" height="100" border="0"><p>*image placeholder*</p></th>
-          <th style="width: 50%"><h1 style="text-align: center;">Test Your <br>Knowledge with <br>AlphaQuiz</h1></th> 
+          <th style="width: 40%;"><img src="Classroom.gif" height="130" border="0" style="border-radius: 5%"></th>
+          <th style="width: 50%"><h2 id="quote" style="text-align: center; color:rgb(247, 247, 247);">Test Your <br>Knowledge with <br>AlphaQuiz</h2></th> 
         </tr>
     </table>
-    <p style="text-align: center;">    You don't have a account? Sign up
-        <a id="journey" class="tbhover tbcontent" href="login/signup.html">here</a>!
-        <br> <br>Be a guest user* by pressing
-        <a id="journey" class="tbhover tbcontent" href="user/main_g.html">here</a>!
-        <br><br><br>*As a guest user, your progress will not be saved!</p>
+<br>
+</div>
+<div>
+    <h3 style="text-align: center;"> We Have Quizzes On</h3>
+    <table style="margin: auto; table-layout: fixed;" >
+        <tr>
+          <th style="width: 30%;" class="bg-rect"><img src="https://static.vecteezy.com/system/resources/previews/005/676/798/original/maths-symbols-icon-set-algebra-or-mathematics-subject-doodle-design-education-and-study-concept-back-to-school-background-for-notebook-not-pad-sketchbook-hand-drawn-illustration-vector.jpg" height="190" width="140" border="2"><p style="font-size: 12px;">Math</p></th>
+          <th style="width: 30%;" class="bg-rect"><img src="https://e0.pxfuel.com/wallpapers/934/322/desktop-wallpaper-biology-science-theory-doodle-handwriting-and-tool-model-icon-for-your-mobile-tablet-explore-background-biology-biology-background-biology-biology-background-thumbnail.jpg" height="190" width="140" border="2"><p style="font-size: 12px;">Biology</p></th>
+          <th style="width: 30%;" class="bg-rect"><img src="https://wallpapers.com/images/featured/coding-avfu043y2kv52wha.jpg" height="190" width="140" border="2"><p style="font-size: 12px;">Programming</p></th>
+        </tr>
+    </table>
+
+    <h3 style="text-align: center;"> Try Them Out Now</h3>
+
+    <table style="margin: auto; table-layout: fixed;" >
+        <tr>
+          <th style="width: 40%;"><button class="rect-arrow" href="login/signup.html" > Sign up</p></th>
+            <th style="width: 40%;"><button class="rect-arrow" href="user/main_g.html" > As a guest user*</p></th>        
+        </tr>
+    </table>
+    <p style="text-align: center;color: rgb(36, 42, 216); text-shadow: 10;"> 
+
+        <br>*As a guest user, your progress will not be saved!</p><br>
     </p>
-<div class="copyright"><br><p style="margin: auto; text-align: center;">Copyright © 2024, AplhaQuiz! All Rights Reserved.
-</p></div>
+    <script>
+        document.cookie = "username=John Smith; path=/";
+    </script>
+<footer><br><p style="margin: auto; text-align: center;">Copyright © 2024, AlphaQuiz! All Rights Reserved.</footer>
+</div>
 </body>
 </html> 
