@@ -121,3 +121,98 @@
   .rect-arrow:hover{
     background-color: rgb(46, 58, 197);
   }
+
+  .Classesmain{
+    content: " ";
+    bottom: auto;
+    width: 70vh;
+    height: 19vh;
+    background: rgb(253, 183, 183);
+    z-index: -1;
+    margin: left;
+    border-radius: 16px;
+  }
+  .Classes{
+    height: 6vh;
+    width: 30vh;
+    background-color: rgb(237, 81, 81);
+    border: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: rgb(255, 255, 255);
+    padding: 11px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Classes:hover{
+    background-color: rgb(141, 29, 29);
+  }
+  .Quizzesmain{
+    content: " ";
+    bottom: auto;
+    width: 70vh;
+    height: 19vh;
+    background: rgb(210, 174, 244);
+    z-index: -1;
+    margin: left;
+    border-radius: 16px;
+  }
+  .Quizzes{
+    height: 6vh;
+    width: 30vh;
+    background-color: rgb(172, 91, 247);
+    border: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: rgb(255, 255, 255);
+    padding: 11px;
+    border-radius: 16px;
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Quizzes:hover{
+    background-color: rgb(123, 41, 199);
+  }
+
+  .statmain{
+    content: " ";
+    bottom: auto;
+    width: 70vh;
+    height: 19vh;
+    background: rgb(174, 227, 234);
+    z-index: -1;
+    margin: left;
+    border-radius: 16px;
+  }
+  .stat{
+    height: 6vh;
+    width: 30vh;
+    background-color: rgb(98, 219, 235);
+    border: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.41' height='12' viewBox='0 0 7.41 12'%3E%3Cpath d='M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z' transform='translate(-8.59 -6)' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: rgb(255, 255, 255);
+    text-align: left; 
+    padding: 11px;
+    border-radius: 16px;
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat:hover{
+    background-color: rgb(39, 141, 205);
+  }
