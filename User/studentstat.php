@@ -33,16 +33,22 @@
         $SID = $_COOKIE["ID"];
 
         $conn = mysqli_connect("localhost", "root","","COMP3421");
-        $sql = "SELECT DISTINCT Quiz.name FROM Quiz,Question,Stat 
-        WHERE Stat.StudentID ='$SID' AND Stat.QuestionID = Question.QuestionID AND Question.QuizID = Quiz.QuizID";
-        
+        $sql = "SELECT DISTINCT Quiz.name, FROM Quiz,Question,Stat 
+        WHERE Stat.StudentID ='$SID' AND Stat.QuestionID = Question.QuestionID AND Question.QuizID = Quiz.QuizID"; 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result))
         {
         $quizName=$row['name'];
+        $sql2 = "SELECT COUNT(*) FROM Quiz,Question,Stat
+        WHERE Stat.StudentID ='$SID' AND Stat.QuestionID = Question.QuestionID AND Question.QuizID = Quiz.QuizID
+        AND Quiz.QuizID ='$quizName' AND Stat.Correct = 1";
+        $sql3 = "SELECT COUNT(*) FROM Quiz,Question,Stat
+        WHERE Stat.StudentID ='$SID' AND Stat.QuestionID = Question.QuestionID AND Question.QuizID = Quiz.QuizID
+        AND Quiz.QuizID ='$quizName'";
         echo "<tr>
                 <td>$quizName</td>
-                <td>mysqli_query($conn,'COUNT Correct FROM Stat Where Correct = 1' )</td>
+                <td>mysqli_query($conn, $sql2)</td>
+                <td>mysqli_query($conn, $sql3)</td>
               </tr>";
         }
         ?>  
