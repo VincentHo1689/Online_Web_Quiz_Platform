@@ -56,10 +56,13 @@
     <select name="QuizID" id="QuizID">
       <?php
       
-        $sql = "SELECT Q.QuizID AS QID FROM Quiz AS Q WHERE TeacherID = $ID";
+        $sql = "SELECT QuizID FROM Quiz WHERE TeacherID = $ID";
         $result = mysqli_query($conn, $sql);
-
-        echo "<option value='volvo'>Volvo</option>"
+        while($row = $result->fetch_assoc()) {
+          $quizID = $row['QuizID']
+          echo "<option value='$quizID'>$quizID</option>"
+        }
+        
       ?>
     </select>
     
