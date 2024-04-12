@@ -15,9 +15,13 @@
     $a3 = $_POST['o3'];
     $a4 = $_POST['o4'];
     $a1r = isset($_POST['o1r']);
+    if (empty($a1r)){$a1r = 0;}
     $a2r = isset($_POST['o2r']);
+    if (empty($a2r)){$a2r = 0;}
     $a3r = isset($_POST['o3r']);
+    if (empty($a3r)){$a3r = 0;}
     $a4r = isset($_POST['o4r']);
+    if (empty($a4r)){$a4r = 0;}
 
     $quiz_id = $_COOKIE['quizID'];
     echo $quiz_id."<br>";
@@ -47,9 +51,7 @@
     }
     else{
         # successful enter
-        echo "<script> 
-        alert('Question updated!')
-        </script>";
+        echo "<script> alert('Question updated!') </script>";
         $sql = "INSERT INTO Question VALUES ('$question_id', '$quiz_id', '$Q')";
         mysqli_query($conn, $sql);
         $sql = "INSERT INTO Answer VALUES ('$question_id',1 ,'$a1' ,'$a1r')";
@@ -60,6 +62,6 @@
         mysqli_query($conn, $sql);
         $sql = "INSERT INTO Answer VALUES ('$question_id',4 ,'$a4' ,'$a4r')";
         mysqli_query($conn, $sql);
-        echo "<script> document.location='login.html' </script>";
+        echo "<script> document.location='quizquestioncreate.html' </script>";
     }
 ?>
