@@ -76,3 +76,6 @@
     $pw1 = $row["PW"];
   
   ?>
+
+  # echo in one line
+  <?= $var ?>
