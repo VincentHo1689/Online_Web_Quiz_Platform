@@ -9,15 +9,21 @@
   <link rel="icon" href="">
 </head>
 <body>
-
-  <form action="quizcreate.php" method="post">
-    <label for="quiz">Quiz Name:</label><br>
-    <input type="text" id="qname" name="qname" value=""><br>
-    <label for="quiz">Class ID*:</label><br>
-    <input type="text" id="cid" name="cid" value="0"><br>
-    <input type="submit" value="Submit">
-  </form> 
-  <p>*If you want to set quiz to public, enter classID to 0</p>
-  <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
+    <div class="bg-rectquizcreate"> <br>
+    <h3 style="text-align: center;">Create Your Quiz</h3> <br>
+    <form action="quizcreate.php" method="post" style="text-align: center;font-size: 2.4vh;">
+      <label for="quiz">Quiz Name:</label>
+      <input type="text" id="qname" name="qname" value=""> <br><br>
+      <label for="quiz">Class ID*:</label>
+      <input type="text" id="cid" name="cid" value="0"> <br> <br>
+      <div style="text-align: center;">
+      <input type="submit" value="Submit">
+      </div>
+    </form>  <br>
+    <p style="padding-left: 10%;padding-right: 10%; text-align: center;">*If you want to set quiz to public,<br> enter classID as 0</p>
+    <div style=" margin: 0; position: absolute; top: 80%; left: 50%; display: flex; justify-content: center; align-items: center;">
+    <button class="rect-arrowhome" onclick="window.location.href='main_t.html'"> <h4 style="font-size: 2vh;">Back to main page</h4></button>
+    </div>
+  </div>
 </body>
 </html>
