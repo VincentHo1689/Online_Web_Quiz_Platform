@@ -49,7 +49,7 @@
 </table>
 
 <br>
-<h1> Change QuizName</h1>
+<h1> Change Quiz Name</h1>
 <form action="quizqnamechange.php" method="post">
     <label for="ID">QuizID:</label>
 
