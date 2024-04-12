@@ -19,7 +19,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 2.8vh;
   }
     
   .topnav a:hover {
@@ -50,6 +50,7 @@
     z-index: -1;
     padding: 0;    
     margin: 0;
+    font-size: 2.5vh;
   }
 
   @keyframes fadeInAnimation {
@@ -109,8 +110,6 @@
     background-repeat: no-repeat;
     background-position: right 10px center;
     color: rgb(255, 255, 255);
-    text-align: left; 
-    padding: 11px;
     border-radius: 16px;
     text-align: center; 
     display: flex;
@@ -216,7 +215,8 @@
   .stat:hover{
     background-color: rgb(39, 141, 205);
   }
-.bg-rectsignup {
+
+  .bg-rectsignup {
     content: " ";
     bottom: auto;
     width: 350px;
@@ -254,4 +254,17 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    }
+
+    .bg-rectquizcreate {
+      content: " ";
+      position: relative;
+      height: 50%;
+      background: rgb(224, 224, 224);
+      z-index: -1;
+      top: 50%; 
+      left: 50%; 
+      width: 60%; 
+      height: 70%;
+      transform: translate(-50%,-50%);
     }
