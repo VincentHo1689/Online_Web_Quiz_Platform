@@ -20,7 +20,14 @@
     if ($result->num_rows == 0) {
         # username wrong/ do not exist
         echo "<script> alert('ClassID not available.') 
-        document.location='login.html'</script>";}
+        document.location='quizcreate.html'</script>";}
+
+    $sql = "SELECT * FROM Quiz WHERE name = '$qname'";
+    $result = mysqli_query($conn, $sql);
+    if ($result->num_rows == 0) {
+        echo "<script> alert('Quiz name used!') 
+        document.location='quizcreate.html'</script>";
+    }
 
     if (empty($qname) || empty($cid)){
         # empty field
