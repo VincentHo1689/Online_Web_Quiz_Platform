@@ -17,10 +17,12 @@
     $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher' AND ClassID = '$cid'";
     $result = mysqli_query($conn, $sql); 
     $row = $result->fetch_assoc();
-    if ($result->num_rows == 0) {
-        # other's class
-        echo "<script> alert('ClassID not available.') 
-        document.location='quizcreate.html'</script>";}
+    if ($cid !=0){
+        if ($result->num_rows == 0) {
+            # other's class
+            echo "<script> alert('ClassID not available.') 
+            document.location='quizcreate.html'</script>";}
+    }
 
     $sql = "SELECT * FROM Quiz WHERE name = '$qname'";
     $result = mysqli_query($conn, $sql);
@@ -29,7 +31,7 @@
         document.location='quizcreate.html'</script>";
     }
 
-    if (empty($qname) || empty($cid)){
+    if (empty($qname) || (empty($cid)&&($cid!=0))){
         # empty field
         echo "<script> alert('Some field are not entered!') 
         document.location='quizcreate.html'</script>";

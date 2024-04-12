@@ -41,7 +41,7 @@
     <input type="text" id="o4" name="o4" value="">
     <input type="checkbox" id="o4r" name="o4r" value=""><br><br>
     <button type = "submit">Save and Next Question</button><br><br>
-    <button type = "submit" formaction = "main_t.html" onclick = "removeCookie('QuizID'); ">Save and Submit</button><br><br>
+    <button type = "submit" formaction = "quizquestiondone.php">Save and Submit</button><br><br>
   </form> 
 </body>
 </html>

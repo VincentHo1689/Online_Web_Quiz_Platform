@@ -26,7 +26,7 @@
     $ID = $_COOKIE["ID"];
 
     $conn = mysqli_connect("localhost", "root","","COMP3421");
-    $sql = "SELECT Q.QuizID AS QID, Q.name AS Qname, C.name AS Cname FROM Quiz AS Q , ClassName AS C WHERE Q.ClassID = C.ClassID AND C.TeacherID = $ID";
+    $sql = "SELECT Q.QuizID AS QID, Q.name AS Qname, C.name AS Cname FROM Quiz AS Q , ClassName AS C WHERE Q.ClassID = C.ClassID AND Q.TeacherID = $ID";
     $result = mysqli_query($conn, $sql);
     if ($result->num_rows != 0) {
       while($row = mysqli_fetch_assoc($result))
@@ -49,31 +49,57 @@
 </table>
 
 <br>
-<h1> Change Class</h1>
-<form action="classnamechange.php" method="post">
-    <label for="ID">QuizID:</label><br>
+<h1> Change QuizName</h1>
+<form action="quizqnamechange.php" method="post">
+    <label for="ID">QuizID:</label>
 
     <select name="QuizID" id="QuizID">
       <?php
       
-        $sql = "SELECT Q.QuizID AS QID FROM Quiz AS Q WHERE TeacherID = $ID";
+        $sql = "SELECT QuizID FROM Quiz WHERE TeacherID = $ID";
         $result = mysqli_query($conn, $sql);
-
-        echo "<option value='volvo'>Volvo</option>"
+        while($row = $result->fetch_assoc()) {
+          $quizID = $row['QuizID'];
+          echo "<option value='$quizID'>$quizID</option>";
+        }
       ?>
     </select>
-    
+    <br>
     <label for="pw">New Class Name:</label><br>
     <input type="text" id="newname" name="newname" value=""><br>
     <input type="submit" value="Submit">
 </form>
 
-<h1> Change QuizName</h1>
-<form action="classnamechange.php" method="post">
-    <label for="ID">Class ID of the class to change:</label><br>
-    <input type="text" id="ClassID" name="ClassID" value=""><br>
-    <label for="pw">New Class Name:</label><br>
-    <input type="text" id="newname" name="newname" value=""><br>
+<h1> Change Class</h1>
+<form action="quizclasschange.php" method="post">
+<label for="ID">QuizID:</label>
+
+<select name="QuizID" id="QuizID">
+  <?php
+  
+    $sql = "SELECT QuizID FROM Quiz WHERE TeacherID = $ID";
+    $result = mysqli_query($conn, $sql);
+    while($row = $result->fetch_assoc()) {
+      $quizID = $row['QuizID'];
+      echo "<option value='$quizID'>$quizID</option>";
+    }
+  ?>
+</select>
+<br><br>
+<label for="ID">Change Class ID to:</label>
+    <select name="Class" id="Class">
+      <option value='Public'>Public</option>
+      <?php
+      
+        $sql = "SELECT name FROM ClassName WHERE TeacherID = $ID";
+        $result = mysqli_query($conn, $sql);
+        while($row = $result->fetch_assoc()) {
+          $class = $row['name'];
+          echo "<option value='$class'>$class</option>";
+        }
+      ?>
+    </select>
+    <br>
     <input type="submit" value="Submit">
 </form>
 
