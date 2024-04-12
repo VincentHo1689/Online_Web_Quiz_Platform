@@ -11,7 +11,16 @@
     error_reporting(E_ALL);
 
     $ID = $_POST['ID'];
-    $name = $_POST['newname'];   
+    $name = $_POST['newname'];  
+    $teacher = $_COOKIE['ID'];
+
+    $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher' AND ClassID = '$ID'";
+    $result = mysqli_query($conn, $sql); 
+    $row = $result->fetch_assoc();
+    if ($result->num_rows == 0) {
+        # other's class
+        echo "<script> alert('ClassID not available.') 
+        document.location='quizcreate.html'</script>";}
 
     if (empty($name) || empty($ID)){
         # empty field
