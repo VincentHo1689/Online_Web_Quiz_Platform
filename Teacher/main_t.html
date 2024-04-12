@@ -8,7 +8,7 @@
   <title>Main Page</title>
   <link rel="icon" href="">
 </head>
-<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');">
+<body style="background-color: bisque;" onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');">
   <div class="topnav">
     <a href="../index.html">AlphaQuiz</a>
     <a href="../login/login.html" class="split">Logout</a>
@@ -17,20 +17,37 @@
   </div> 
   <h1 id='name'>Welcome [teachers]!</h1>
 
- <div>
-  <h1>Classes</h1>
-  <a href = "classcreate.html">Create classes</a>
-  <a href = "classmanage.php">Manage classes</a>
- </div>
-<div>
-  <h1>Quizzes</h1>
-  <a href = "quizcreate.html">Create Quiz</a>
-  <a href = "quizmodify.php">Modify Quiz</a>
+ <div class="Classesmain">
+  <h1 style="text-indent: 10px;">Class</h1>
+  <table>
+    <tr>
+      <th><button href = "classcreate.html" class="Classes">Create New Class</button> </th>
+      <th><button href = "classmanage.php" class="Classes">Manage Classes</button>
+    </th>
+    </tr>
+  </table>
 </div>
-<div>
-  <h1>Stats</h1>
-  <a href = "statstudent.html">Stats by students</a>
-  <a href = "statquiz.html">Stats by quizzes</a>
+
+<div class="Quizzesmain">
+  <h1 style="text-indent: 10px;">Quiz</h1>
+  <table>
+    <tr>
+      <th><button href = "quizcreate.html" class="Quizzes">Create New Quiz</button> </th>
+      <th><button href = "quizmodify.php" class="Quizzes">Modify Quizzes</button>
+    </th>
+    </tr>
+  </table>
+</div>
+
+<div class="statmain">
+  <h1 style="text-indent: 10px;">Statistics</h1>
+  <table>
+    <tr>
+      <th><button href = "statstudent.html" class="stat">Statistics By Student</button> </th>
+      <th><button href = "statquiz.html" class="stat">Statistics By Class</button>
+    </th>
+    </tr>
+  </table>
 </div>
 </body>
 </html>
