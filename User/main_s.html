@@ -8,7 +8,7 @@
   <title>Main Page</title>
   <link rel="icon" href="">
 </head>
-<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');">
+<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');" style="background-color: bisque;">
   <div class="topnav">
     <a href="../index.html">AlphaQuiz</a>
     <a href="../login/login.html" class="split">Logout</a>
@@ -17,13 +17,22 @@
   </div> 
   <h1 id="name">Unchanged!</h1>
   
-  <div>
-  <h1>Classes</h1>
-  <a href = "classjoin.php">Join a class</a>
- </div>
-<div>
-  <h1>Quizzes</h1>
-  <a href = "quizdo.php">Do a Quiz</a>
+    <div class="Classesmain">
+    <h1 style="text-indent: 10px;">Join a Class</h1>
+    <table>
+      <tr>
+        <th><button onclick="window.location.href ='classjoin.php'" class="Classes">Join a Class</button> </th>
+      </tr>
+    </table>
+  </div>
+
+ <div class="Quizzesmain">
+  <h1 style="text-indent: 10px;">Quizzes</h1>
+  <table>
+    <tr>
+      <th><button onclick="window.location.href='quizdop.php'" class="Quizzes">Do a Quiz</button> </th>
+    </tr>
+  </table>
 </div>
   <h2>Past statistics</h2>
   
