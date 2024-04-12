@@ -24,30 +24,17 @@
     if (empty($a4r)){$a4r = 0;}
 
     $quiz_id = $_COOKIE['quizID'];
-    echo $quiz_id."<br>";
-
-    echo $Q."<br>";
-    echo $a1."<br>";
-    echo $a1r."<br>";
-    echo $a2."<br>";
-    echo $a2r."<br>";
-    echo $a3."<br>";
-    echo $a3r."<br>";
-    echo $a4."<br>";
-    echo $a4r."<br>";
-    
 
     # get id
     $sql = "SELECT MAX(QuestionID) AS new_id FROM Question";
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_assoc();
     $question_id = (int) $row["new_id"] +1;
-    echo $a4r."<br>";
 
     if (empty($Q) || empty($a1) || empty($a2) || empty($a3) || empty($a4)){
         # empty field
         echo "<script> alert('Some field are not entered!') 
-        document.location='signup.html'</script>";
+        document.location='quizquestioncreate.php'</script>";
     }
     else{
         # successful enter
@@ -62,6 +49,6 @@
         mysqli_query($conn, $sql);
         $sql = "INSERT INTO Answer VALUES ('$question_id',4 ,'$a4' ,'$a4r')";
         mysqli_query($conn, $sql);
-        echo "<script> document.location='quizquestioncreate.html' </script>";
+        echo "<script> document.location='quizquestioncreate.php' </script>";
     }
 ?>
