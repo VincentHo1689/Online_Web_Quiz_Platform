@@ -17,14 +17,14 @@
     $sql = "SELECT ClassID FROM ClassName WHERE TeacherID = '$teacher' AND ClassID = '$cid'";
     $result = mysqli_query($conn, $sql); 
     $row = $result->fetch_assoc();
-    if ($result->num_rows != 0) {
+    if ($result->num_rows == 0) {
         # other's class
         echo "<script> alert('ClassID not available.') 
         document.location='quizcreate.html'</script>";}
 
     $sql = "SELECT * FROM Quiz WHERE name = '$qname'";
     $result = mysqli_query($conn, $sql);
-    if ($result->num_rows == 0) {
+    if ($result->num_rows != 0) {
         echo "<script> alert('Quiz name used!') 
         document.location='quizcreate.html'</script>";
     }
