@@ -48,7 +48,7 @@
     if ($result->num_rows != 0) {
         # username wrong/ do not exist
         echo "<script> alert('Username taken, please choose another username.') 
-        document.location='login.html'</script>";}
+        document.location='signup.html'</script>";}
 
 
     if (empty($name) || empty($email) || empty($pw) || empty($cpw)){

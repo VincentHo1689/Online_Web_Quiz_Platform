@@ -46,13 +46,13 @@
                     document.cookie='username=$name; path=/'
                     document.cookie='ID=$ID; path=/'
                     alert('Welcome $role ".$name.".') 
-                    document.location='main_s.html'</script>";}
+                    document.location='../user/main_s.html'</script>";}
                 else 
                     {echo "<script> 
                     document.cookie='username=$name; path=/'
                     document.cookie='ID=$ID; path=/'
                     alert('Welcome $role ".$name.".') 
-                    document.location='main_t.html'</script>";}
+                    document.location='../teacher/main_t.html'</script>";}
             }
             else {
                 #wrong password
