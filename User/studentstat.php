@@ -33,24 +33,29 @@
         $SID = $_COOKIE["ID"];
 
         $conn = mysqli_connect("localhost", "root","","COMP3421");
-        $sql = "SELECT DISTINCT Q.name FROM Quiz AS Q,Question AS QU ,Stat AS S 
+        $sql = "SELECT DISTINCT Q.name AS name FROM Quiz AS Q,Question AS QU ,Stat AS S 
         WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID"; 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result))
         {
-        $quizName=$row['Q.name'];
-        $sql2 = "SELECT COUNT(*) FROM Quiz AS Q,Question AS QU ,Stat AS S 
+        $quizName=$row['name'];
+        $sql2 = "SELECT * FROM Quiz AS Q, Question AS QU ,Stat AS S 
         WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID
         AND Q.name ='$quizName' AND S.Correct = 1";
-        $sql3 = "SELECT COUNT(*) FROM Quiz AS Q,Question AS QU ,Stat AS S
+        $result2 = mysqli_query($conn, $sql2);
+        $result2 = mysqli_num_rows($result2);
+        ?> <tr>
+                <td><?php echo $quizName ?></td>
+                <td><?php echo $result2 ?></td> 
+        <?php 
+        $sql3 = "SELECT * FROM Quiz AS Q, Question AS QU ,Stat AS S 
         WHERE S.StudentID ='$SID' AND S.QuestionID = QU.QuestionID AND QU.QuizID = Q.QuizID
         AND Q.name ='$quizName'";
-        echo "<tr>
-                <td>$quizName</td>
-                <td>mysqli_query($conn, $sql2)</td>
-                <td>mysqli_query($conn, $sql3)</td>
-              </tr>";
-        }
+        $result3 = mysqli_query($conn, $sql3);
+        $result3 = mysqli_num_rows($result3); ?>
+                <td><?php echo $result3 ?></td>
+        </tr>;
+        <?php }
         ?>  
       </table>
 </body>
