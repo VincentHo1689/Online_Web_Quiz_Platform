@@ -49,14 +49,34 @@
 </table>
 
 <br>
-<h1> Change Class Name </h1>
+<h1> Change Class</h1>
 <form action="classnamechange.php" method="post">
-    <label for="ID">Class ID of the class to change:</label><br>
-    <input type="text" id="ID" name="ID" value=""><br>
+    <label for="ID">QuizID:</label><br>
+
+    <select name="QuizID" id="QuizID">
+      <?php
+      
+        $sql = "SELECT Q.QuizID AS QID FROM Quiz AS Q WHERE TeacherID = $ID";
+        $result = mysqli_query($conn, $sql);
+
+        echo "<option value='volvo'>Volvo</option>"
+      ?>
+    </select>
+    
     <label for="pw">New Class Name:</label><br>
     <input type="text" id="newname" name="newname" value=""><br>
     <input type="submit" value="Submit">
 </form>
+
+<h1> Change QuizName</h1>
+<form action="classnamechange.php" method="post">
+    <label for="ID">Class ID of the class to change:</label><br>
+    <input type="text" id="ClassID" name="ClassID" value=""><br>
+    <label for="pw">New Class Name:</label><br>
+    <input type="text" id="newname" name="newname" value=""><br>
+    <input type="submit" value="Submit">
+</form>
+
   <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
 </html>
