@@ -8,7 +8,7 @@
   <title>Do a Quiz</title>
   <link rel="icon" href="">
 </head>
-<body>
+<body onload="function()">
 
   <table>
     <Tr>
@@ -33,8 +33,11 @@
     echo "<Tr>
             <td>$QID</td>
             <script>
-            var scrt_var = '$quizname';
-            document.getElementById('link').setAttribute('href', '2.html & Key=' + scrt_var);
+            (function() {
+              var scrt_var = '$quizname';
+              var strLink = '2.html&Key=' + scrt_var;
+              document.getElementById('link').setAttribute('href',strLink);
+          })();
             </script>
             <td><a  id='link'>$quizname</a></td>
           <tr>";
