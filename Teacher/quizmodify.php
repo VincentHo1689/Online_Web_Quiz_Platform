@@ -26,7 +26,7 @@
     $ID = $_COOKIE["ID"];
 
     $conn = mysqli_connect("localhost", "root","","COMP3421");
-    $sql = "SELECT Q.QuizID AS QID, Q.name AS Qname, C.name AS Cname FROM Quiz AS Q , ClassName AS C WHERE Q.ClassID = C.ClassID AND C.TeacherID = $ID";
+    $sql = "SELECT Q.QuizID AS QID, Q.name AS Qname, C.name AS Cname FROM Quiz AS Q , ClassName AS C WHERE Q.ClassID = C.ClassID AND Q.TeacherID = $ID";
     $result = mysqli_query($conn, $sql);
     if ($result->num_rows != 0) {
       while($row = mysqli_fetch_assoc($result))
@@ -59,8 +59,8 @@
         $sql = "SELECT QuizID FROM Quiz WHERE TeacherID = $ID";
         $result = mysqli_query($conn, $sql);
         while($row = $result->fetch_assoc()) {
-          $quizID = $row['QuizID']
-          echo "<option value='$quizID'>$quizID</option>"
+          $quizID = $row['QuizID'];
+          echo "<option value='$quizID'>$quizID</option>";
         }
         
       ?>
