@@ -1,5 +1,5 @@
 <?php
-conn = mysqli_connect("localhost", "root","","COMP3421");
+    $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
     {
         die("Connect Error:" . mysqli_connect_error());
@@ -42,6 +42,6 @@ conn = mysqli_connect("localhost", "root","","COMP3421");
         $sql = "INSERT INTO Quiz VALUES($new_id,'$qname',$cid,$teacher);";	
         mysqli_query($conn, $sql);
         echo "<script> document.cookie='quizID=$new_id; path=/'
-        document.location='quizquestioncreate.html' </script>";
+        document.location='quizquestioncreate.php' </script>";
     }
 ?>

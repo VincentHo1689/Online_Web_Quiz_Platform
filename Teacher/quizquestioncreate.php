@@ -12,8 +12,21 @@
     <h1>Input the question and options.<br>
         If the option(s) is/are correct, fill in the circle on the right of the corresponding option.
     </h1><br>
+  <?php
+    $conn = mysqli_connect("localhost", "root","","COMP3421");
+    if (!$conn)
+    {
+        die("Connect Error:" . mysqli_connect_error());
+    }
+
+    $quiz_id = $_COOKIE['quizID'];
+    $sql = "SELECT COUNT(QuestionID) AS Q_num FROM Question WHERE QuizID = '$quiz_id'";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_assoc();
+    $Qnum = (int) $row["Q_num"] +1;
+  ?>
   <form action="quizquestionsave.php" method="post">
-    <label for="username">Question:</label><br>
+    <label for="username">Question <?= $Qnum ?>:</label><br>
     <input type="text" id="question" name="question" value=""><br>
     <label for="username">Option 1:</label><br>
     <input type="text" id="o1" name="o1" value="">
@@ -28,9 +41,7 @@
     <input type="text" id="o4" name="o4" value="">
     <input type="checkbox" id="o4r" name="o4r" value=""><br><br>
     <button type = "submit">Save and Next Question</button><br><br>
-    <button type = "submit" formaction = "main_t.php">Save and Submit</button><br><br>
+    <button type = "submit" formaction = "main_t.html" onclick = "removeCookie('QuizID'); ">Save and Submit</button><br><br>
   </form> 
-
-  <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
 </html>
