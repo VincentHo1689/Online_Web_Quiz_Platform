@@ -1,0 +1,11 @@
+echo "<Tr>
+            <td>$QID</td>
+            <script>
+            (function() {
+              var scrt_var = '$quizname';
+              var strLink = '2.html&Key=' + scrt_var;
+              document.getElementById('link').setAttribute('href',strLink);
+          })();
+            </script>
+            <td><a  id='link'>$quizname</a></td>
+          <tr>";
