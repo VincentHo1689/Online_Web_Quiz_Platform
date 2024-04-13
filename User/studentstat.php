@@ -17,9 +17,9 @@
   </div>
 
 <h1>Past Statistics</h1>
-
-<table>
-        <Tr>
+<div class="userstat">
+<table class="tabletext">
+        <tr>
           <th>Quiz Name</th>
           <th>Score</th>
           <th>Full Score</th>
@@ -54,9 +54,10 @@
         $result3 = mysqli_query($conn, $sql3);
         $result3 = mysqli_num_rows($result3); ?>
                 <td><?php echo $result3 ?></td>
-        </tr>;
+        </tr>
         <?php }
         ?>  
       </table>
+        </div>
 </body>
 </html>
