@@ -292,3 +292,7 @@
       border-radius: 16px;
     }
 
+      input[type=button], input[type=submit]{
+      cursor: pointer;
+    }
+
