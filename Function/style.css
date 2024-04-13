@@ -276,3 +276,15 @@
     h3{
       font-size: 3vh;
     }
+
+    .bg-rectphp {
+      content: " ";
+      bottom: auto;
+      background: rgb(224, 224, 224);
+      z-index: -1;
+      margin: auto;
+      background-size: contain;
+      width: 40%;
+      border-radius: 16px;
+    }
+
