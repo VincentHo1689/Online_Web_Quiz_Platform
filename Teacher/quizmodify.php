@@ -8,7 +8,7 @@
   <title>Manage Class</title>
   <link rel="icon" href="">
 </head>
-<body style="text-align: center;">
+<body style="text-align: center; font-size: 2.5vh;">
 
 <div class="bg-rectphp">
 <h1 style="font-size: 4.8vh;">Created Quiz</h1>
