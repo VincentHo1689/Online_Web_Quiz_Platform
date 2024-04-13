@@ -296,3 +296,29 @@
       cursor: pointer;
     }
 
+    .users{
+      text-align: center;
+    }
+
+    form{
+      font-size: 2.6vh;
+    }
+
+    .userstat{
+      width: 40%;
+      background-size: contain;
+      background-color: rgb(156, 229, 217);
+      border: none;
+      color: rgb(0, 0, 0);
+      text-align: left; 
+      padding: 1vh;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+    }
+     
+    table.tabletext{
+      font-size: 3vh;
+      table-layout: auto;
+      width: 90%;
+    }
