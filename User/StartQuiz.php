@@ -8,7 +8,7 @@
   <title>Do a Quiz</title>
   <link rel="icon" href="">
 </head>
-<body onload="function()">
+<body onload="function()" style="text-align: center;">
   <?php 
     
       ini_set('display_errors', '1');
