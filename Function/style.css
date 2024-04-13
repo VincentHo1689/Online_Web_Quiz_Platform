@@ -320,16 +320,17 @@
     }
 
     .userstat{
-      width: 40%;
+      width: 80%;
       background-size: contain;
       background-color: rgb(156, 229, 217);
       border: none;
       color: rgb(0, 0, 0);
-      text-align: left; 
+      text-align: center; 
       padding: 1vh;
       border-radius: 16px;
       display: flex;
       align-items: center;
+      margin: auto;
     }
      
     table.tabletext{
