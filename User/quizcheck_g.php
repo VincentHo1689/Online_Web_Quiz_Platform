@@ -61,12 +61,12 @@
     $row = $result->fetch_assoc();
     $TotalQ = $row['cnt'];
     if ($TotalQ <= $QNum){
-        echo "<script> document.location='quizend.php'</script>";
+        echo "<script> document.location='quizend_g.php'</script>";
     }
     else{
         $QNum = (int) $QNum +1;
         setcookie('QNum',$QNum, 0, '/');
-        echo "<script> document.location='quiz.php';</script>";
+        echo "<script> document.location='quiz_g.php';</script>";
     }
 
 

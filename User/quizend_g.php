@@ -46,7 +46,7 @@
         $sql="DELETE FROM stat WHERE StudentID=-1";
         mysqli_query($conn, $sql);
     ?>
-    <form action="main_s.html" id="quiz" method="post">
+    <form action="main_g.html" id="quiz" method="post">
         <input type='submit' value='Back to Main Page'>
     </form>
 </body>

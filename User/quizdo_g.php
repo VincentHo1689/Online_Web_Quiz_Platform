@@ -34,7 +34,7 @@
         <td><?= $Qname ?></td>
         <td><?= $Cname ?></td>
 
-        <form action="StartQuiz.php" method="post">
+        <form action="StartQuiz_g.php" method="post">
           <td><input style="cursor: pointer;" type="submit" value="Do Quiz"></td>
           <input type="hidden" name='QuizName' value='<?= $Qname ?>'>
         </form>
@@ -47,7 +47,7 @@
   </table>
   <br>
   </div>
-  <button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
+  <button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_g.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
 
 </body>
 </html>

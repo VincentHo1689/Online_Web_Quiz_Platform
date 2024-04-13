@@ -31,7 +31,7 @@
       if ($result->num_rows != 0) {
         # Do quiz Already
         echo "<script> alert('You do this quiz already.') 
-        document.location='main_s.html'</script>";};
+        document.location='main_g.html'</script>";};
 
       echo "<script>  document.cookie = 'QuizID = $QuizID; path=/'; </script>";
       setcookie('QNum','1', 0, '/');
@@ -45,7 +45,7 @@
 
   <h1><?= "There are total ".$QuizNum." questions."?></h1>
   
-  <form action="Quiz.php" method="post">
+  <form action="Quiz_g.php" method="post">
     <td><input type="submit" value="Start Quiz"></td>
     <input type="hidden" name='QuizID' value='<?= $QuizID ?>'>
   </form>
