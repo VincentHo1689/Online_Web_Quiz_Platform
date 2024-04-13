@@ -8,14 +8,14 @@
   <title>Manage Class</title>
   <link rel="icon" href="">
 </head>
-<body>
-
-<h1>Existing Classes</h1>
-
-
+<body style="text-align: center;">
+<div class="bg-rectphp">
+<h1 style="font-size: 5vh;">Existing Classes</h1>
 
 
-<table>
+
+
+<table style="margin-left: auto; margin-right: auto; font-size: 3vh;">
   <Tr>
     <th>Class ID</th>
     <th>Class Name</th>
@@ -35,23 +35,27 @@
   {
   $classID=$row['ClassID'];
   $className=$row['name'];
-  echo "<Tr>
+  echo "<tr>
           <td>$classID</td>
           <td>$className</td>
         <tr>";
   }
   ?>  
+ 
 </table>
-
+ </div>
 <br>
-<h1> Change Class Name </h1>
-<form action="classnamechange.php" method="post">
+<div class="bg-rectphp">
+<h1 style="font-size: 5vh;"> Change Class Name </h1>
+<form action="classnamechange.php" method="post" style="font-size: 2.6vh;">
     <label for="ID">Class ID of the class to change:</label><br>
     <input type="text" id="ID" name="ID" value=""><br>
     <label for="pw">New Class Name:</label><br>
     <input type="text" id="newname" name="newname" value=""><br>
     <input type="submit" value="Submit">
 </form>
-  <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
+</div>
+
+<button style="margin-top: 5%;" class="rect-arrowhome" onclick="window.location.href='main_t.html'"> <h4 style="font-size: 2vh;">Back to main page</h4></button>
 </body>
 </html>
