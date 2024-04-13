@@ -8,7 +8,7 @@
   <title>Do a Quiz</title>
   <link rel="icon" href="">
 </head>
-<body onload="function()" style="font-size: 3vh;">
+<body onload="function()" style="font-size: 3vh;" class="users">
 <br>
 <div class="bg-rectphp">
   <table class="centered">
@@ -49,7 +49,7 @@
   </table>
   <br>
   </div>
-  <button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
+  <button style="margin-top: 1%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
 
 </body>
 </html>
