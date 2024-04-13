@@ -46,6 +46,7 @@
     <input type="text" id="ID" name="ID" value=""><br><br>
     <input type="submit" value="Submit"> <br><br>
       </div>
-      <a><button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button></a>
+</form>
+      <button style="margin-top: 1%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
 </body>
 </html>
