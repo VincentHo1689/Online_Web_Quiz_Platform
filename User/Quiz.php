@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../function/style.css">
   <script src="../function/script.js"></script>
-  <title>Create Question</title>
+  <title>Quiz Ongoing</title>
   <link rel="icon" href="">
 </head>
-<body>
-    
+<body onload=>
+  <p id ='timer'> </p>
   <?php
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
@@ -22,6 +22,7 @@
     error_reporting(E_ALL);
 
     $QuizID = $_COOKIE['QuizID'];
+
     $QNum = $_COOKIE['QNum'];
 
     # SQL nth Question

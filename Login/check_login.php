@@ -14,14 +14,8 @@
     $name = $_POST['username'];
     $pw = $_POST['pw'];
 
-    echo "
-    <script>
-        document.cookie = 'ID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'QuizID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'QNum=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    </script>
-    ";
+    $_COOKIE['QNum']='';
+    $_COOKIE['QuizID']='';
     
     if (empty($role)){
         # no input radio 

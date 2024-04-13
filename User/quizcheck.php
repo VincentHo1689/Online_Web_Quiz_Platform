@@ -22,30 +22,31 @@
     # Get Answer
     $QuizID = $_COOKIE['QuizID'];
     $QNum = $_COOKIE['QNum'];
+
     $sql = "SELECT Content, QuestionID FROM Question WHERE QuizID = '$QuizID' ORDER BY QuestionID";
     $Question = mysqli_query($conn, $sql);
     for ($i = 0; $i < $QNum; $i++) {
         $row = $Question->fetch_assoc();
     }
     $QuestionID = $row['QuestionID'];
+    #echo 'Question: '.$QuestionID.'<br>';
 
     $sql = "SELECT Answer FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
     $Answer = mysqli_query($conn, $sql);
     $row = $Answer->fetch_assoc();
-    $row = $Answer->fetch_assoc();
-    $row = $Answer->fetch_assoc();
-    $row = $Answer->fetch_assoc();
-
     $A1 = $row['Answer'];
+    $row = $Answer->fetch_assoc();
     $A2 = $row['Answer'];
+    $row = $Answer->fetch_assoc();
     $A3 = $row['Answer'];
+    $row = $Answer->fetch_assoc();
     $A4 = $row['Answer'];
 
-    echo ($A1r==$A1);
-    echo ($A2r==$A2); 
-    echo ($A3r==$A3); 
-    echo ($A4r==$A4);
-    echo (($A1r==$A1) && ($A2r==$A2) && ($A3r==$A3) && ($A4r==$A4));
+    # Checking
+    #echo 'SQL <br>'.$A1.'<br>'.$A2.'<br>'.$A3.'<br>'.$A4.'<br><br>';
+    #echo 'Input <br>'.$A1r.'<br>'.$A2r.'<br>'.$A3r.'<br>'.$A4r.'<br><br>';
+    #echo 'Logic <br>'.($A1r==$A1).'<br>'.($A2r==$A2).'<br>'.($A3r==$A3).'<br>'.($A4r==$A4).'<br><br>';
+    #echo 'Out <br>'.(($A1r==$A1) && ($A2r==$A2) && ($A3r==$A3) && ($A4r==$A4));
     $correct = (($A1r==$A1) && ($A2r==$A2) && ($A3r==$A3) && ($A4r==$A4));
     if (empty($correct)){$correct = 0;}
 
@@ -60,13 +61,12 @@
     $row = $result->fetch_assoc();
     $TotalQ = $row['cnt'];
     if ($TotalQ <= $QNum){
-        setcookie('QNum', '' , time() - 3600);
-        #echo "<script> document.location='quizend.php'</script>";
+        echo "<script> document.location='quizend.php'</script>";
     }
     else{
-        $Qnum = (int) $QNum +1;
-        setcookie('QNum', $Qnum);
-        #echo "<script> document.location='quiz.php';</script>";
+        $QNum = (int) $QNum +1;
+        setcookie('QNum',$QNum, 0, '/');
+        echo "<script> document.location='quiz.php';</script>";
     }
 
 

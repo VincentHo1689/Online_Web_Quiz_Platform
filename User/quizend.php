@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../function/style.css">
+  <script src="../function/script.js"></script>
+  <title>CongratsS!</title>
+  <link rel="icon" href="">
+</head>
+<body>
 <?php
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
@@ -24,14 +35,17 @@
     
     # Check last question
     
-    $sql = "SELECT COUNT(Correct), SUM(Correct)FROM Stat WHERE QuestionID IN( SELECT QuestionID FROM Question WHERE QuizID = '$QuizID') AND StudentID ='$StudentID';";
+    $sql = "SELECT COUNT(Correct) AS Total, SUM(Correct) AS Correct FROM Stat WHERE QuestionID IN( SELECT QuestionID FROM Question WHERE QuizID = '$QuizID') AND StudentID ='$StudentID';";
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_assoc();
-    
-
-
-
+    $total = $row['Total'];
+    $correct = $row['Correct'];
 ?>
-
+    <h1>You score <?= $correct?> out of <?= $total?> ! </h1>
+<?php
+    setcookie('QNum','', time()-3600, '/');
+    setcookie('QuizID','', time()-3600, '/');
+?>
+</body>
 
 

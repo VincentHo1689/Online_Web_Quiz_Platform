@@ -22,8 +22,9 @@
       $result = mysqli_query($conn, $sql);
       $row = $result->fetch_assoc();
       $QuizID = $row['QuizID'];
+
       echo "<script>  document.cookie = 'QuizID = $QuizID; path=/'; </script>";
-      setcookie('QNum', 1);
+      setcookie('QNum','1', 0, '/');
 
       $sql = "SELECT COUNT(*) AS cnt FROM Question WHERE QuizID = '$QuizID'";
       $result = mysqli_query($conn, $sql);

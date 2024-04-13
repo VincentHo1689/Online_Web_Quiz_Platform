@@ -77,6 +77,12 @@
     $result = mysqli_query($conn, $sql); 
     $row = $result->fetch_assoc();
     $pw1 = $row["PW"];
+
+    # Set Cookie
+    setcookie('QuizID',$var, 0, '/');
+
+    # Remove Cookie
+    setcookie('QuizID','', time()-3600, '/');
   
   ?>
 
@@ -84,3 +90,5 @@
   <?= $var ?>
 
   console.log(document.cookie)
+
+  
