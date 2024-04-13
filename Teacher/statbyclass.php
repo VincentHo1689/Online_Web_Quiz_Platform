@@ -20,10 +20,10 @@
 <div class="userstat" style="margin: auto; text-align:center;">
   <table class="tabletext">
         <tr>
-          <th>Student Name</th>
           <th>Class Name</th>
-          <th>Score</th>
-          <th>Total Score</th>
+          <th>Quiz Name</th>
+          <th>Average</th>
+          <th>Full Score</th>
         </tr>
         <?php 
       
@@ -36,33 +36,50 @@
         $conn = mysqli_connect("localhost", "root","","COMP3421");
 
 
-        $sql = "SELECT S.username AS sname, CN.name AS cname, S.ID AS SID
-                FROM Class AS C, Student AS S, ClassName AS CN
-                WHERE C.ClassID = CN.ClassID
-                  AND C.StudentID = S.ID
-                  AND CN.TeacherID = $TeacherID"; 
+        $sql = "SELECT DISTINCT C.name AS cname, Q.name AS name 
+                FROM Quiz AS Q,Question AS QU ,Stat AS S, ClassName AS C
+                WHERE S.StudentID IN (SELECT StudentID
+                                      FROM Class
+                                      WHERE ClassID IN (SELECT ClassID 
+                                                        FROM ClassName
+                                                        WHERE TeacherID = $TeacherID))
+                  AND S.QuestionID = QU.QuestionID 
+                  AND QU.QuizID = Q.QuizID
+                  AND C.ClassID = Q.ClassID;"; 
+
 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result))
         {
-          $SName=$row['sname'];
-          $CName=$row['cname'];
-          $SID = $row['SID']
+          $className=$row['cname'];
+          $quizName=$row['name'];
           ?> <tr>
-              <td><?php echo $SName ?></td>
-              <td><?php echo $CName ?></td> 
+              <td><?php echo $className ?></td>
+              <td><?php echo $quizName ?></td> 
           <?php 
 
-          $sql2 = "SELECT SUM(S.Correct) AS Score, COUNT(S.Correct) AS Total
-                    FROM Stat AS S 
-                    WHERE StudentID = $SID";
+          $sql2 = "SELECT SUM(S.Correct)/COUNT(S.Correct) AS Average 
+                    FROM Quiz AS Q, Question AS QU ,Stat AS S 
+                    WHERE S.QuestionID = QU.QuestionID 
+                      AND QU.QuizID = Q.QuizID
+                      AND Q.name ='$quizName'";
 
           $result2 = mysqli_query($conn, $sql2);
           $row = $result2 -> fetch_assoc();
-          $Score = $row['Score'];
-          $Total = $row['Total'];
+          $Average = $row['Average'];
           ?> 
-              <td><?php echo $Score ?></td> 
+              <td><?php echo $Average ?></td> 
+          <?php 
+
+          $sql3 = "SELECT COUNT(*) AS Total
+                    FROM Quiz AS Q, Question AS QU
+                    WHERE QU.QuizID = Q.QuizID
+                      AND Q.name ='$quizName'";
+
+          $result3 = mysqli_query($conn, $sql3);
+          $row = $result3 -> fetch_assoc();
+          $Total = $row['Total']; ?>
+
               <td><?php echo $Total ?></td>
           </tr>
         <?php }
