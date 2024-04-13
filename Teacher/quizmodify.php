@@ -8,11 +8,12 @@
   <title>Manage Class</title>
   <link rel="icon" href="">
 </head>
-<body>
+<body style="text-align: center;">
 
-<h1>Created Quiz</h1>
+<div class="bg-rectphp">
+<h1 style="font-size: 4.8vh;">Created Quiz</h1>
 
-<table>
+<table style="margin-left: auto; margin-right: auto; font-size: 2.5vh;">
   <Tr>
     <th>Quiz ID</th>
     <th>Quiz Name</th>
@@ -47,9 +48,10 @@
     }
   ?>  
 </table>
+</div>
+<div class="bg-rectphp">
 
-<br>
-<h1> Change Quiz Name</h1>
+<h1 style="font-size: 4.8vh;"> Change Quiz Name</h1>
 <form action="quizqnamechange.php" method="post">
     <label for="ID">QuizID:</label>
 
@@ -63,14 +65,17 @@
           echo "<option value='$quizID'>$quizID</option>";
         }
       ?>
-    </select>
-    <br>
+    </select> 
+    <br><br>
     <label for="pw">New Class Name:</label><br>
     <input type="text" id="newname" name="newname" value=""><br>
     <input type="submit" value="Submit">
 </form>
+<br>
+</div>
+<div class="bg-rectphp">
 
-<h1> Change Class</h1>
+<h1 style="font-size: 4.8vh;"> Change Class</h1>
 <form action="quizclasschange.php" method="post">
 <label for="ID">QuizID:</label>
 
@@ -99,10 +104,11 @@
         }
       ?>
     </select>
-    <br>
+    <br><br>
     <input type="submit" value="Submit">
 </form>
-
+<br>
+</div>
   <a id="journey" class="tbhover tbcontent" href="main_t.html">Back to main page</a>!
 </body>
 </html>
