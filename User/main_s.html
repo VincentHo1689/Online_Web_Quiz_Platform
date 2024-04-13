@@ -8,35 +8,34 @@
   <title>Main Page</title>
   <link rel="icon" href="">
 </head>
-<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');" style="background-color: bisque;">
+<body onload="document.getElementById('name').innerHTML='Welcome '+getCookie('username');" style="background-color: bisque;" class="users">
   <div class="topnav">
     <a href="../index.html">AlphaQuiz</a>
     <a href="../login/login.html" class="split">Logout</a>
     <a href="../other/aboutus.html" class="split">About Us</a>
     <a href="main_s.html" class="split">Home</a>
   </div> 
-  <div style="text-align: center;"><h1 id="name" style="font-size: 5vh; display: inline-block;">Unchanged!</h1></div>
+  <h1 id="name" style="display: inline-block;">Unchanged!</h1>
   <div style="padding-left: 2%;">
     <div class="Classesmain" style="margin: 3vh auto;">
-        <h1 style="text-indent: 10px; font-size: 4vh; margin: 0; padding-top: 2%; padding-bottom: 1%;">Class</h1>
+        <h2 style="text-indent: 10px; margin: 0; padding-top: 2%; padding-bottom: 1%;">Class</h2>
         <div style="padding-left: 2%;">
-            <button style="width: 80%; font-size: 2vh;"" onclick="window.location.href ='classjoin.php'" class="Classes main1btn">Join a Class</button>        
+            <button style="width: 80%; font-size: 2vh;" onclick="window.location.href ='classjoin.php'" class="Classes main1btn">Join a Class</button>        
         </div>
     </div>
   <br>
   <div class="Quizzesmain" style="margin: 3vh auto;">
-    <h1 style="text-indent: 10px;font-size: 4vh;margin: 0; padding-top: 2%; padding-bottom: 1%;">Quizzes</h1>
+    <h2 style="text-indent: 10px; margin: 0; padding-top: 2%; padding-bottom: 1%;">Quizzes</h2>
     <div style="padding-left: 2%;">
         <button style="width: 80%; font-size: 2vh;" onclick="window.location.href='quizdo.php'" class="Quizzes main1btn">Do a Quiz</button> 
     </div>
   </div>
   <br>
   <div class="statmain" style="margin: 3vh auto;">
-    <h1 style="text-indent: 10px;font-size: 4vh;margin: 0; padding-top: 2%; padding-bottom: 1%;">Past Statistics</h1>
+    <h2 style="text-indent: 10px;margin: 0; padding-top: 2%; padding-bottom: 1%;">Past Statistics</h2>
     <div style="padding-left: 2%;">
         <button style="width: 80%; font-size: 2vh;" onclick="window.location.href='studentstat.php'" class="stat main1btn">Check Past Scores</button> 
     </div>
-  </div>
   </div>
 </body>
 </html>
