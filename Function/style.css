@@ -17,7 +17,7 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 2vh 2.7vh;
     text-decoration: none;
     font-size: 2.8vh;
   }
@@ -34,8 +34,8 @@
   .bg-rect {
     content: " ";
     bottom: auto;
-    width: 350px;
-    height: 250px;
+    width: 55vh;
+    height: 40vh;
     background: rgb(224, 224, 224);
     z-index: -1;
     margin: auto;
@@ -45,7 +45,7 @@
     content: " ";
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 15vh;
     background: rgb(171, 201, 253);
     z-index: -1;
     padding: 0;    
@@ -219,8 +219,8 @@
   .bg-rectsignup {
     content: " ";
     bottom: auto;
-    width: 350px;
-    height: 300px;
+    width: 55vh;
+    height: 47vh;
     background: rgb(224, 224, 224);
     z-index: -1;
     margin: auto;
