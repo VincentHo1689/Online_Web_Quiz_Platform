@@ -130,7 +130,7 @@
     width:80%;
   }
   .Classesmain{
-    margin: auto; 
+    margin: 3vh auto; 
     text-align: center;
     content: " ";
     bottom: auto;
@@ -161,7 +161,7 @@
     background-color: rgb(187, 21, 21);
   }
   .Quizzesmain{
-    margin: auto; 
+    margin: 3vh auto; 
     text-align: center;
     content: " ";
     bottom: auto;
@@ -194,7 +194,7 @@
   }
 
   .statmain{
-    margin: auto; 
+    margin: 3vh auto; 
     text-align: center;
     content: " ";
     bottom: auto;
