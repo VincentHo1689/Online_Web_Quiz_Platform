@@ -1,12 +1,15 @@
 <?php
 
     #connect PHP
-    echo "Connecting PHP"."<br>";
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
     {
         die("Connect Error:" . mysqli_connect_error());
     }
+
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
 
     # assign variable
     $name = $_POST['username'];

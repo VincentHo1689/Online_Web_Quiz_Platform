@@ -17,7 +17,7 @@ Question
 QuestionID (Int 6), QuizID (Int 4), Content (Str 500)
 
 Answer
-QuestionID (Int 6), AnswerNum (Int 1), Content (Str 500), answer (Bool)
+QuestionID (Int 6), AnswerNum (Int 1), Content (Str 500), Answer (Bool)
 
 Stat
 QuestionID (Int 6), StudentID (Int 4), Correct (Bool)

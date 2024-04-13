@@ -17,32 +17,66 @@
         die("Connect Error:" . mysqli_connect_error());
     }
 
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+
     $QuizID = $_COOKIE['QuizID'];
     $QNum = $_COOKIE['QNum'];
-    $sql = "SELECT Content FROM Question WHERE QuizID = '$QuizID' ORDER BY QuestionID";
-    $result = mysqli_query($conn, $sql);
 
+    # SQL nth Question
+    $sql = "SELECT Content, QuestionID FROM Question WHERE QuizID = '$QuizID' ORDER BY QuestionID";
+    $Question = mysqli_query($conn, $sql);
     for ($i = 0; $i < $QNum; $i++) {
-        $row = $result->fetch_assoc();
+        $row = $Question->fetch_assoc();
     }
-    #$Qnum = (int) $QNum +1;
-    echo "<script>  document.cookie = 'QNum = $QNum; path=/'; </script>";
+
+    $QContent = $row['Content'];
+    $QuestionID = $row['QuestionID'];
+
+    $sql = "SELECT SUM(Answer) AS N FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
+    $Num = mysqli_query($conn, $sql);
+    $ANum = $Num->fetch_assoc();
   ?>
 
-    <h1>Question <?= $QNum ?>:</h1>
-    <h1><?= $row['Content']; ?></h1><br>
+  <h1>Question <?= $QNum ?>:</h1>
+  <h1><?= $QContent ?></h1><br>
+  <h2>There are <?= $ANum['N'] ?> answer in this question.</h2><br>
 
-  <form action="quizquestioncheck.php" method="post">
+  <form action="quizcheck.php" method="post">
+  <?php
+    $sql = "SELECT Content FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
+    $Answer = mysqli_query($conn, $sql);
+    $A1 = $Answer->fetch_assoc();
+    $A2 = $Answer->fetch_assoc();
+    $A3 = $Answer->fetch_assoc();
+    $A4 = $Answer->fetch_assoc();
+  ?>
 
-    <label for="username">Option 1:</label><br>
-    <input type="checkbox" id="o1r" name="o1r" value=""><br>
-    <label for="username">Option 2:</label><br>
-    <input type="checkbox" id="o2r" name="o2r" value=""><br>
-    <label for="username">Option 3:</label><br>
-    <input type="checkbox" id="o3r" name="o3r" value=""><br>
-    <label for="username">Option 4:</label><br>
-    <input type="checkbox" id="o4r" name="o4r" value=""><br><br>
-    <button type = "submit">Next Question</button><br><br>
+    <label for="A1"> <?= $A1['Content'] ?></label>
+    <input type="checkbox" id="A1" name="A1" value=""><br>
+
+    <label for="A2"> <?= $A2['Content'] ?></label>
+    <input type="checkbox" id="A2" name="A2" value=""><br>
+
+    <label for="A3"> <?= $A3['Content'] ?></label>
+    <input type="checkbox" id="A3" name="A3" value=""><br>
+
+    <label for="A4"> <?= $A4['Content'] ?></label>
+    <input type="checkbox" id="A4" name="A4" value=""><br><br>
+    <?php
+      $sql = "SELECT COUNT(*) AS cnt FROM Question WHERE QuizID = '$QuizID'";
+      $result = mysqli_query($conn, $sql);
+      $row = $result->fetch_assoc();
+      $TotalQ = $row['cnt'];
+      if ($TotalQ ==  $QNum){
+        echo "<button type = 'submit'>Finish Quiz</button><br>";
+      }
+      else{
+        echo "<button type = 'submit'>Next Question</button><br>";
+      }
+    ?>
+    
   
   </form> 
 
