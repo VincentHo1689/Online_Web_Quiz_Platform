@@ -12,11 +12,12 @@
   <br>
 <div class="bg-rectphp">
   <br>
-    <h1 style="font-size: 5vh; text-align: center;" >Input the question and options.</h1>
-    <h2 style="font-size: 4vh; text-align: center;">
+  <div class="users">
+    <h1>Input the question and options.</h1>
+    <h2>
         If the option(s) is/are correct, fill in the circle on the right of the corresponding option.
     </h2><br>
-
+</div>
   <?php
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
