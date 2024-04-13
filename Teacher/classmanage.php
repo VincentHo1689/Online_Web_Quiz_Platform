@@ -8,14 +8,14 @@
   <title>Manage Class</title>
   <link rel="icon" href="">
 </head>
-<body style="text-align: center;">
+<body class="users">
 <div class="bg-rectphp">
-<h1 style="font-size: 5vh;">Existing Classes</h1>
+<h2>Existing Classes</h2>
 
 
 
 
-<table style="margin-left: auto; margin-right: auto; font-size: 3vh;">
+<table style="font-size: 3vh;" class="centered">
   <Tr>
     <th>Class ID</th>
     <th>Class Name</th>
@@ -46,13 +46,13 @@
  </div>
 <br>
 <div class="bg-rectphp">
-<h1 style="font-size: 5vh;"> Change Class Name </h1>
+<h2> Change Class Name </h2>
 <form action="classnamechange.php" method="post" style="font-size: 2.6vh;">
     <label for="ID">Class ID of the class to change:</label><br>
     <input type="text" id="ID" name="ID" value=""><br>
     <label for="pw">New Class Name:</label><br>
-    <input type="text" id="newname" name="newname" value=""><br>
-    <input type="submit" value="Submit">
+    <input type="text" id="newname" name="newname" value=""><br><br>
+    <input type="submit" value="Submit"><br><br>
 </form>
 </div>
 
