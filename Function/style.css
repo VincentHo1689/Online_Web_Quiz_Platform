@@ -123,6 +123,11 @@
   .textwidth{
     display: inline-block;
   }
+  .main1btn{
+    font-size: 2vh; 
+    margin: auto; 
+    width:80%;
+  }
   .Classesmain{
     margin: auto; 
     text-align: center;
