@@ -8,7 +8,7 @@
   <title>Quiz Ongoing</title>
   <link rel="icon" href="">
 </head>
-<body onload=> 
+<body onload="timer(30,'timer','quiz')"> 
   <div class="bg-rectphp">
   <p id ='timer'> </p>
   <?php
