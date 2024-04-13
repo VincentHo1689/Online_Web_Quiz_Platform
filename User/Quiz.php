@@ -8,8 +8,8 @@
   <title>Quiz Ongoing</title>
   <link rel="icon" href="">
 </head>
-<body onload=>
-  <p id ='timer'> </p>
+<body onload="timer(30,'timer','quiz')">
+  <div id ='timer'> timer </div>
   <?php
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
@@ -44,7 +44,7 @@
   <h1><?= $QContent ?></h1><br>
   <h2>There are <?= $ANum['N'] ?> answer in this question.</h2><br>
 
-  <form action="quizcheck.php" method="post">
+  <form action="quizcheck.php" id="quiz" method="post">
   <?php
     $sql = "SELECT Content FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
     $Answer = mysqli_query($conn, $sql);

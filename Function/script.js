@@ -37,3 +37,19 @@ function loop_quote(){
         n+=1
     }, 3000);
 }
+function timer(time,timer_tag,form_tag){
+    var timeLeft = time;
+    var timer_text = document.getElementById(timer_tag);
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (timeLeft == -1) {
+        clearTimeout(timerId);
+        document.forms[form_tag].submit();
+      } else {
+        timer_text.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+      }
+    }
+  }
