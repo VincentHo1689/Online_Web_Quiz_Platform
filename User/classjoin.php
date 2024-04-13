@@ -8,9 +8,11 @@
   <title>Create Class</title>
   <link rel="icon" href="">
 </head>
-<body>
-
-    <table>
+<body class="users">
+  <br>
+  <div class="bg-rectphp">
+    <h3> Existing Class </h3>
+    <table style="margin-left: auto; margin-right: auto; font-size: " >
         <Tr>
           <th>Class ID</th>
           <th>Class Name</th>
@@ -35,14 +37,15 @@
         }
         ?>  
       </table>
-
+      </div>
       <br>
+      <div class="bg-rectphp">
 <h1> Join class </h1>
-<form action="studentjoin.php" method="post">
+<form action="studentjoin.php" method="post" >
     <label for="ID">Input ID of the class to join:</label><br>
-    <input type="text" id="ID" name="ID" value=""><br>
-    <input type="submit" value="Submit">
-
-  <a id="journey" class="tbhover tbcontent" href="main_s.html">Back to main page</a>!
+    <input type="text" id="ID" name="ID" value=""><br><br>
+    <input type="submit" value="Submit"> <br><br>
+      </div>
+      <a><button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button></a>
 </body>
 </html>
