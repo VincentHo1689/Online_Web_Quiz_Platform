@@ -8,9 +8,10 @@
   <title>Do a Quiz</title>
   <link rel="icon" href="">
 </head>
-<body onload="function()">
-
-  <table>
+<body onload="function()" style="font-size: 3vh;">
+<br>
+<div class="bg-rectphp">
+  <table class="centered">
     <Tr>
       <th>Quiz Name</th>
       <th>Class Name</th>
@@ -36,7 +37,7 @@
         <td><?= $Cname ?></td>
 
         <form action="StartQuiz.php" method="post">
-          <td><input type="submit" value="Do Quiz"></td>
+          <td><input style="cursor: pointer;" type="submit" value="Do Quiz"></td>
           <input type="hidden" name='QuizName' value='<?= $Qname ?>'>
         </form>
     </tr>
@@ -46,7 +47,9 @@
     }
     ?>  
   </table>
+  <br>
+  </div>
+  <button style="margin-top: 5%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
 
-  <a id="journey" class="tbhover tbcontent" href="main_s.html">Back to main page</a>!
 </body>
 </html>
