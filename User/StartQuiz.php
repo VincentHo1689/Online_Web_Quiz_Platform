@@ -18,6 +18,16 @@
       $QuizName = $_POST["QuizName"];
       
       $conn = mysqli_connect("localhost", "root","","COMP3421");
+
+      $ID = $_COOKIE['ID'];
+      $sql = "SELECT * FROM stat WHERE StudentID=$ID AND QuestionID IN (SELECT QuestionID FROM Question WHERE name = $QuizName);";
+      $result = mysqli_query($conn, $sql);
+      if ($result->num_rows != 0) {
+        # Do quiz Already
+        echo "<script> alert('You do this quiz already.') 
+        document.location='main_s.html'</script>";};
+
+
       $sql = "SELECT QuizID FROM Quiz WHERE name = '$QuizName'";
       $result = mysqli_query($conn, $sql);
       $row = $result->fetch_assoc();
