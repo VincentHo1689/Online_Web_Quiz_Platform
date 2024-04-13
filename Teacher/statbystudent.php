@@ -87,5 +87,8 @@
       </table>
         </div>
         </div>
+        <div style="margin: 3vh auto; text-align: center;">
+          <button class="rect-arrowhome" onclick="window.location.href='main_t.html'"> <h4>Back to main page</h4></button>
+        </div>
 </body>
 </html>
