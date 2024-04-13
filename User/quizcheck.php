@@ -41,26 +41,32 @@
     $A3 = $row['Answer'];
     $A4 = $row['Answer'];
 
-    $correct = ($A1r==$A1 && $A2r==$A2 && $A3r==$A3 && $A4r==$A4);
+    echo ($A1r==$A1);
+    echo ($A2r==$A2); 
+    echo ($A3r==$A3); 
+    echo ($A4r==$A4);
+    echo (($A1r==$A1) && ($A2r==$A2) && ($A3r==$A3) && ($A4r==$A4));
+    $correct = (($A1r==$A1) && ($A2r==$A2) && ($A3r==$A3) && ($A4r==$A4));
     if (empty($correct)){$correct = 0;}
 
     # Insert answer
     $SID = $_COOKIE['ID'];
-    #$sql = "INSERT INTO Stat VALUES ('$QuestionID','$SID','$correct')";
-    #mysqli_query($conn, $sql);
+    $sql = "INSERT INTO Stat VALUES ('$QuestionID','$SID','$correct')";
+    mysqli_query($conn, $sql);
     
     # Check last question
     $sql = "SELECT COUNT(*) AS cnt FROM Question WHERE QuizID = '$QuizID'";
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_assoc();
     $TotalQ = $row['cnt'];
-    if ($TotalQ == $QNum){
-        echo "<script> document.location='quizend.php'</script>";
+    if ($TotalQ <= $QNum){
+        setcookie('QNum', '' , time() - 3600);
+        #echo "<script> document.location='quizend.php'</script>";
     }
     else{
         $Qnum = (int) $QNum +1;
         setcookie('QNum', $Qnum);
-        echo "<script> document.location='quiz.php';</script>";
+        #echo "<script> document.location='quiz.php';</script>";
     }
 
 

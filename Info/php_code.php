@@ -82,3 +82,5 @@
 
   # echo in one line
   <?= $var ?>
+
+  console.log(document.cookie)
