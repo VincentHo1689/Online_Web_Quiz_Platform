@@ -45,7 +45,7 @@
   <h1><?= $QContent ?></h1>
   <h2 style="font-size: 3.5vh">There are <?= $ANum['N'] ?> answer in this question.</h2><br>
   </div>
-  <form action="quizcheck.php" method="post">
+  <form action="quizcheck.php" id='quiz' method="post">
   <?php
     $sql = "SELECT Content FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
     $Answer = mysqli_query($conn, $sql);
