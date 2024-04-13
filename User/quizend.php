@@ -8,7 +8,7 @@
   <title>CongratsS!</title>
   <link rel="icon" href="">
 </head>
-<body>
+<body class="users">
     <?php
         $conn = mysqli_connect("localhost", "root","","COMP3421");
         if (!$conn)
