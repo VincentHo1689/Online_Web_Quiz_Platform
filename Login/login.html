@@ -8,7 +8,7 @@
   <title>Login Page</title>
   <link rel="icon" href="">
 </head>
-<body>
+<body class="users">
   <div class="topnav">
     <a href="../index.html">AlphaQuiz</a>
     <a href="login.html" class="split">Login</a>
@@ -16,16 +16,14 @@
     <a href="../index.html" class="split">Home</a>
   </div> 
   <br>
-
   <div class="bg-rect">
     <br>
-  <form style="text-align: center;font-size: 2.6vh;" method="post" action="check_login.php">
-    <h3 style="text-align: center; font-size: 3vh;">Login As:</h3>
+  <form style="font-size: 2.6vh;" method="post" action="check_login.php">
+    <h3>Login As:</h3>
     <input type="radio" id="student" name="login_role" value="Student">
     <label for="student">Student </label>
     <input type="radio" id="teacher" name="login_role" value="Teacher">
-    <label for="teacher">Teacher </label><br>
-    <br>
+    <label for="teacher">Teacher </label><br><br>
     <label for="username">Username:</label> 
     <input type="text" id="username" name="username" value="username"><br><br>
     <label for="pw">Password:</label>
@@ -35,12 +33,12 @@
   <br></div>
   
   <br>
-  <p style="text-align: center; font-size: 2.2vh;">    You don't have a account? Sign up
+  <h4>You don't have a account? Sign up
     <a id="journey" class="tbhover tbcontent" href="signup.html">here</a>!
     <br> <br>Be a guest user* by pressing
     <a id="journey" class="tbhover tbcontent" href="../user/main_g.html">here</a>!
     <br><br><br>*As a guest user, your progress will not be saved!</p>
-</p>
-<footer><br><p style="margin: auto; text-align: center;">Copyright © 2024, AlphaQuiz! All Rights Reserved.</footer>
+  </h4>
+<footer><br>Copyright © 2024, AlphaQuiz! All Rights Reserved.</footer>
 </body>
 </html>
