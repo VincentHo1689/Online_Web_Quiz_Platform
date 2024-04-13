@@ -8,8 +8,9 @@
   <title>Quiz Ongoing</title>
   <link rel="icon" href="">
 </head>
-<body onload="timer(30,'timer','quiz')">
-  <div id ='timer'> timer </div>
+<body onload=> 
+  <div class="bg-rectphp">
+  <p id ='timer'> </p>
   <?php
     $conn = mysqli_connect("localhost", "root","","COMP3421");
     if (!$conn)
@@ -39,12 +40,12 @@
     $Num = mysqli_query($conn, $sql);
     $ANum = $Num->fetch_assoc();
   ?>
-
+<div class="users">
   <h1>Question <?= $QNum ?>:</h1>
-  <h1><?= $QContent ?></h1><br>
-  <h2>There are <?= $ANum['N'] ?> answer in this question.</h2><br>
-
-  <form action="quizcheck.php" id="quiz" method="post">
+  <h1><?= $QContent ?></h1>
+  <h2 style="font-size: 3.5vh">There are <?= $ANum['N'] ?> answer in this question.</h2><br>
+  </div>
+  <form action="quizcheck.php" method="post">
   <?php
     $sql = "SELECT Content FROM Answer WHERE QuestionID = '$QuestionID' ORDER BY AnswerNum";
     $Answer = mysqli_query($conn, $sql);
@@ -53,7 +54,8 @@
     $A3 = $Answer->fetch_assoc();
     $A4 = $Answer->fetch_assoc();
   ?>
-
+  
+    <div style= "margin-left:  25%;">
     <label for="A1"> <?= $A1['Content'] ?></label>
     <input type="checkbox" id="A1" name="A1" value=""><br>
 
@@ -65,6 +67,8 @@
 
     <label for="A4"> <?= $A4['Content'] ?></label>
     <input type="checkbox" id="A4" name="A4" value=""><br><br>
+  </div>
+  <div class="users">
     <?php
       $sql = "SELECT COUNT(*) AS cnt FROM Question WHERE QuizID = '$QuizID'";
       $result = mysqli_query($conn, $sql);
@@ -77,9 +81,9 @@
         echo "<button type = 'submit'>Next Question</button><br>";
       }
     ?>
-    
+    </div>
   
-  </form> 
-
+  </form> <br>
+    </div>
 </body>
 </html>
