@@ -67,7 +67,7 @@
           $result2 = mysqli_query($conn, $sql2);
           $row = $result2 -> fetch_assoc();
           $Average = $row['Average'];
-          ?> <tr>
+          ?> 
               <td><?php echo $Average ?></td> 
           <?php 
 
@@ -78,7 +78,8 @@
 
           $result3 = mysqli_query($conn, $sql3);
           $row = $result3 -> fetch_assoc();
-          $Total = $result3['Total']; ?>
+          $Total = $row['Total']; ?>
+
               <td><?php echo $Total ?></td>
           </tr>
         <?php }
