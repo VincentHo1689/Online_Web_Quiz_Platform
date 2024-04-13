@@ -8,12 +8,12 @@
   <title>Manage Class</title>
   <link rel="icon" href="">
 </head>
-<body style="text-align: center; font-size: 2.5vh;">
+<body class="users">
 
 <div class="bg-rectphp">
-<h1 style="font-size: 4.8vh;">Created Quiz</h1>
+<h1>Created Quiz</h1>
 
-<table style="margin-left: auto; margin-right: auto; font-size: 2.5vh;">
+<table style="font-size: 2.5vh;" class="centered">
   <Tr>
     <th>Quiz ID</th>
     <th>Quiz Name</th>
@@ -51,8 +51,8 @@
 </div>
 <div class="bg-rectphp">
 
-<h1 style="font-size: 4.8vh;"> Change Quiz Name</h1>
-<form action="quizqnamechange.php" method="post">
+<h1> Change Quiz Name</h1>
+<form action="quizqnamechange.php" method="post" style="font-size: 2.5vh;">
     <label for="ID">QuizID:</label>
 
     <select name="QuizID" id="QuizID">
@@ -68,15 +68,15 @@
     </select> 
     <br><br>
     <label for="pw">New Class Name:</label><br>
-    <input type="text" id="newname" name="newname" value=""><br>
+    <input type="text" id="newname" name="newname" value=""><br><br>
     <input type="submit" value="Submit">
 </form>
 <br>
 </div>
 <div class="bg-rectphp">
 
-<h1 style="font-size: 4.8vh;"> Change Class</h1>
-<form action="quizclasschange.php" method="post">
+<h1> Change Class</h1>
+<form action="quizclasschange.php" method="post" style="font-size: 2.5vh;">
 <label for="ID">QuizID:</label>
 
 <select name="QuizID" id="QuizID">
