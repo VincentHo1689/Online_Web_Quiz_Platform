@@ -65,7 +65,8 @@
                       AND Q.name ='$quizName'";
 
           $result2 = mysqli_query($conn, $sql2);
-          $Average = $result2['Average'];
+          $row = $result2 -> fetch_assoc();
+          $Average = $row['Average'];
           ?> <tr>
               <td><?php echo $Average ?></td> 
           <?php 
@@ -76,8 +77,9 @@
                       AND Q.name ='$quizName'";
 
           $result3 = mysqli_query($conn, $sql3);
+          $row = $result3 -> fetch_assoc();
           $Total = $result3['Total']; ?>
-                  <td><?php echo $Total ?></td>
+              <td><?php echo $Total ?></td>
           </tr>
         <?php }
         ?>  
