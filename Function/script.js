@@ -19,7 +19,7 @@ function removeCookie(cname){
 function change_quote(n){
     const quotes = new Array('Expand Your Knowledge <br> With Engaging Quizzes',
                             'Join a Community of<br> Quiz Enthusiasts',
-                            'Find Quizzes That <br>Educate, Entertain and Inspire Here',
+                            'Find Quizzes That <br>Educate, Entertain Here',
                             'Test Your Knowledge <br> with AlphaQuiz',
                             'Keep Your Brain <br>Sharp with AlphaQuiz');
     var_quote = document.getElementById('quote')
