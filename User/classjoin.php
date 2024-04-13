@@ -11,7 +11,7 @@
 <body class="users">
   <br>
   <div class="bg-rectphp">
-    <h3> Existing Class </h3>
+    <h2> Existing Class </h2>
     <table style="margin-left: auto; margin-right: auto; font-size: " >
         <Tr>
           <th>Class ID</th>
@@ -40,7 +40,7 @@
       </div>
       <br>
       <div class="bg-rectphp">
-<h1> Join class </h1>
+<h2> Join class </h2>
 <form action="studentjoin.php" method="post" >
     <label for="ID">Input ID of the class to join:</label><br>
     <input type="text" id="ID" name="ID" value=""><br><br>
