@@ -109,7 +109,7 @@
 </form>
 <br>
 </div>
-<button style="margin-top: 1%" class="rect-arrowhome" onclick="window.location.href='main_s.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
+<button style="margin-top: 1%" class="rect-arrowhome" onclick="window.location.href='main_t.html'"> <h4 style="font-size: 2vh;">Back to main page!</h4></button>
 <br> <br>
 </body>
 </html>
