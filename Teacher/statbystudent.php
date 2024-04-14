@@ -40,7 +40,8 @@
                 FROM Class AS C, Student AS S, ClassName AS CN
                 WHERE C.ClassID = CN.ClassID
                   AND C.StudentID = S.ID
-                  AND CN.TeacherID = $TeacherID"; 
+                  AND CN.TeacherID = $TeacherID
+                  AND CN.ClassID <> 0";; 
 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result))

@@ -58,7 +58,7 @@
               <td><?php echo $quizName ?></td> 
           <?php 
 
-          $sql2 = "SELECT SUM(S.Correct)/COUNT(S.Correct) AS Average 
+          $sql2 = "SELECT (SUM(S.Correct)/COUNT(S.Correct))*COUNT(S.Correct) AS Average 
                     FROM Quiz AS Q, Question AS QU ,Stat AS S 
                     WHERE S.QuestionID = QU.QuestionID 
                       AND QU.QuizID = Q.QuizID
